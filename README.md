@@ -8,7 +8,13 @@ These algorithms were implemented with the goal to experiment with them and many
 
 
 ## Implemented Algorithms:
-None, at this point in time, will be added shortly after christmas.
+*Sorting*:
+- Selection Sort
+- Bubble Sort
+- Merge Sort
+
+*Searching*:
+
 
 ## License
 All the code in this repo is licensed under the permissive MIT license.
