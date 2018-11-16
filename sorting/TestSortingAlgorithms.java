@@ -21,7 +21,7 @@ class TestSortingAlgorithms {
 	
 	@Test
 	void testBubbleSort() {
-		assertEquals(Arrays.toString(referenceSolution),Arrays.toString(MergeSort.mergeSort(arrayToBeSorted)));
+		assertEquals(Arrays.toString(referenceSolution),Arrays.toString(BubbleSort.bubbleSort(arrayToBeSorted)));
 	}
 	
 	@Test
@@ -36,7 +36,7 @@ class TestSortingAlgorithms {
 	
 	@Test
 	void testSelectionSort() {
-		assertEquals(Arrays.toString(referenceSolution),Arrays.toString(MergeSort.mergeSort(arrayToBeSorted)));
+		assertEquals(Arrays.toString(referenceSolution),Arrays.toString(SelectionSort.selectionSort(arrayToBeSorted)));
 	}
 	
 	@Test
