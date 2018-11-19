@@ -11,16 +11,16 @@ These algorithms were implemented with the goal to experiment with them and many
 *Sorting*:
 - Selection Sort
 - Bubble Sort
-- Merge Sort
-- Heap Sort
+- Sequential Merge Sort
+- IsSorted, a small program checking whether a given array is sorted.
 
 *Searching*:
 - Linear Search
 - Binary Search
 - Exponential Search
 
-*Graphs*
-none 😢 
+*Graphs*:
+ - none 😢 
 
 ## License
 All the code in this repo is licensed under the permissive MIT license.

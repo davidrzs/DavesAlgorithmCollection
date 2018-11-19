@@ -29,7 +29,7 @@ class TestSortingAlgorithms {
 	@Test
 	void testRecursive2MergeSort() {
 		int[] arrayToBeSorted = new int[] {5,2,99,12,6,4,4,91,-21,0,0,-3,1,6,4,2};
-		assertEquals(Arrays.toString(referenceSolution),Arrays.toString(MergeSort.mergeSort(arrayToBeSorted)));
+		assertEquals(Arrays.toString(referenceSolution),Arrays.toString(Recursive2MergeSort.mergeSort(arrayToBeSorted)));
 	}
 	
 	@Test
