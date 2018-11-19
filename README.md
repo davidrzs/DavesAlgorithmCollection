@@ -15,7 +15,12 @@ These algorithms were implemented with the goal to experiment with them and many
 - Heap Sort
 
 *Searching*:
+- Linear Search
+- Binary Search
+- Exponential Search
 
+*Graphs*
+none 😢 
 
 ## License
 All the code in this repo is licensed under the permissive MIT license.
