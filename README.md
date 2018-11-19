@@ -12,6 +12,7 @@ These algorithms were implemented with the goal to experiment with them and many
 - Selection Sort
 - Bubble Sort
 - Merge Sort
+- Heap Sort
 
 *Searching*:
 
