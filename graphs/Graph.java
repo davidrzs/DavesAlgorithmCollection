@@ -11,6 +11,6 @@ public interface Graph {
 	
 	void addEdge(int v, int w);
 		
-	List<Integer> adj();
+	List<Integer> adj(int w);
 
 }
