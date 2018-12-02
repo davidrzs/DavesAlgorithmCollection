@@ -29,7 +29,8 @@ public class AdjacencyListGraph implements Graph {
 	
 	public void addEdge(int v, int w) {
 		nodes[v].add(w);
-		nodes[w].add(v);
+		// since we are working with directed graphs
+		//nodes[w].add(v);
 	}
 	
 	
