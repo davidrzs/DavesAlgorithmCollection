@@ -1,10 +1,9 @@
-import java.util.Stack;
 import java.util.Queue;
 import java.util.LinkedList;
 
 public class BreadthFirstSearch {
 	public static void main(String[] args) {
-		Graph g = new AdjacencyListGraph(10);
+		Graph g = new MatrixGraph(10);
 		g.addEdge(1, 2);
 		g.addEdge(2, 3);
 		g.addEdge(3, 6);

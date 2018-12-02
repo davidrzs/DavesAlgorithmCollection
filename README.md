@@ -10,6 +10,7 @@ These algorithms were implemented with the goal to experiment with them and many
 ## Implemented Algorithms:
 *Sorting*:
 - Selection Sort
+- HeapSort
 - Bubble Sort
 - Sequential Merge Sort
 - IsSorted, a small program checking whether a given array is sorted.
@@ -20,9 +21,15 @@ These algorithms were implemented with the goal to experiment with them and many
 - Exponential Search
 
 *Graphs*:
- - none 😢 
+ - Graph Interface
+ - Adjacency list based graph class
+ - Matrix based graph class
+ - Depth first search
+ - Breadth first search
+ 
  
  *Datastructures*:
+ - AVL Tree
  - LinkedList
  - Queue
  - Stack
