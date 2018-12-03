@@ -34,5 +34,10 @@ These algorithms were implemented with the goal to experiment with them and many
  - Queue
  - Stack
 
+*Dynamic Programming*
+- Knapsack
+- CoinChange
+- StockOptimum
+
 ## License
 All the code in this repo is licensed under the permissive MIT license.
