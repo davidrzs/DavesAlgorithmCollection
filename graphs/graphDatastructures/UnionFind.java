@@ -11,7 +11,7 @@ public class UnionFind {
 	ArrayList<Set<Integer>> members;
 	int[] rep;
 	
-	UnionFind(int vertices){
+	public UnionFind(int vertices){
 		size = new int[vertices];
 		members = new ArrayList<Set<Integer>>(vertices);
 		

@@ -32,11 +32,9 @@ These algorithms were implemented with the goal to experiment with them and many
 	- Depth first search
 	- Breadth first search
 - *Shortest Paths*
-	- None yet :(
+	- none yet ☹️
 - *Minimal Spanning Trees*
-	- Kruskal
-	- Prim
-	- Reverse Kruskal
+	- none yet ☹️
 
 **Sorting**:
 - Selection Sort
