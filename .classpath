@@ -10,7 +10,7 @@
 			<attribute name="module" value="true"/>
 		</attributes>
 	</classpathentry>
-	<classpathentry kind="con" path="org.eclipse.jdt.junit.JUNIT_CONTAINER/5"/>
+	<classpathentry exported="true" kind="con" path="org.eclipse.jdt.junit.JUNIT_CONTAINER/5"/>
 	<classpathentry kind="lib" path="/home/david/git/DavesAlgorithmCollection/lib/antlr4-runtime-4.7.1.jar"/>
 	<classpathentry kind="lib" path="/home/david/git/DavesAlgorithmCollection/lib/commons-lang3-3.8.1.jar"/>
 	<classpathentry kind="lib" path="/home/david/git/DavesAlgorithmCollection/lib/commons-text-1.5.jar"/>
