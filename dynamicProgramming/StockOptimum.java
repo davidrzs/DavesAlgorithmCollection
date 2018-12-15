@@ -11,7 +11,6 @@ public class StockOptimum {
         int profit = 0;
         int nrBoughtSoFar = 0;
         int maxSoFar = 0;
-        int pMax = 0;
         int nextMaxPtr = getMax(prices,0);
         for(int i = 0; i < prices.length; i++){
             if(i == nextMaxPtr){

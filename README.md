@@ -19,6 +19,7 @@ These algorithms were implemented with the goal to experiment with them and many
 - Linear Search
 - Binary Search
 - Exponential Search
+- Interpolation Search
 
 *Graphs*:
  - Graph Interface
@@ -26,6 +27,7 @@ These algorithms were implemented with the goal to experiment with them and many
  - Matrix based graph class
  - Depth first search
  - Breadth first search
+ - Weighted matrix graph
  
  
  *Datastructures*:
@@ -38,6 +40,7 @@ These algorithms were implemented with the goal to experiment with them and many
 - Knapsack
 - CoinChange
 - StockOptimum
+- Paragraph Formatting / Optimal Line Break
 
 ## License
 All the code in this repo is licensed under the permissive MIT license.

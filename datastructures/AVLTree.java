@@ -45,7 +45,6 @@ public class AVLTree {
 		
 	   private void backPropagateSizeUpdate(TreeElement elem) {
 			
-		   TreeElement copy = elem;
 		   while(elem.parent != null) {
 				elem = elem.parent;
 				elem.nr_of_kids++;
@@ -193,7 +192,7 @@ public class AVLTree {
 	    
 	    private TreeElement leftRotation(TreeElement el) {
 	    	/* it is hard to comment this function -> if you draw it on a piece of paper it all makes sense.*/
-	    	// linkes kind wird neuer Aufhängpunkt
+	    	// linkes kind wird neuer Aufhï¿½ngpunkt
 	    	TreeElement pseudoRoot = el.rightChild;
 
 	    	//nach oben erreichbar machen
@@ -209,15 +208,15 @@ public class AVLTree {
 	        }
 	    	// linkes kind von el ist neu das rechte kind von pseudoroot
 	    	el.rightChild = pseudoRoot.leftChild;
-	    	// jetzt müssen wir dem umgehängten (falls es denn existiert) einen neuen "Vater zuteilen"
+	    	// jetzt mï¿½ssen wir dem umgehï¿½ngten (falls es denn existiert) einen neuen "Vater zuteilen"
 	        if (el.rightChild != null) {
 	        	el.rightChild.parent = el;
 	        }
-	        // zum schluss hängen wir el links an pseudoroot
+	        // zum schluss hï¿½ngen wir el links an pseudoroot
 	        pseudoRoot.leftChild = el;
 	        el.parent = pseudoRoot;
 	 
-	        // jetzt haben sie die Balances geändert da wir eine Rotation gemacht haben. --> wir updaten die und rufen dann in der obigen methode eventuell wieder einer Rotation auf
+	        // jetzt haben sie die Balances geï¿½ndert da wir eine Rotation gemacht haben. --> wir updaten die und rufen dann in der obigen methode eventuell wieder einer Rotation auf
 	        updateBalance(el);
 	        updateBalance(pseudoRoot);
 	 
@@ -228,7 +227,7 @@ public class AVLTree {
 		
 	    private TreeElement rightRotation(TreeElement el) {
 	    	/* it is hard to comment this function -> if you draw it on a piece of paper it all makes sense.*/
-	    	// linkes kind wird neuer Aufhängpunkt
+	    	// linkes kind wird neuer Aufhï¿½ngpunkt
 	    	TreeElement pseudoRoot = el.leftChild;
 
 	    	//nach oben erreichbar machen
@@ -244,15 +243,15 @@ public class AVLTree {
 	        }
 	    	// linkes kind von el ist neu das rechte kind von pseudoroot
 	    	el.leftChild = pseudoRoot.rightChild;
-	    	// jetzt müssen wir dem umgehängten (falls es denn existiert) einen neuen "Vater zuteilen"
+	    	// jetzt mï¿½ssen wir dem umgehï¿½ngten (falls es denn existiert) einen neuen "Vater zuteilen"
 	        if (el.leftChild != null) {
 	        	el.leftChild.parent = el;
 	        }
-	        // zum schluss hängen wir el links an pseudoroot
+	        // zum schluss hï¿½ngen wir el links an pseudoroot
 	        pseudoRoot.rightChild = el;
 	        el.parent = pseudoRoot;
 	 
-	        // jetzt haben sie die Balances geändert da wir eine Rotation gemacht haben. --> wir updaten die und rufen dann in der obigen methode eventuell wieder einer Rotation auf
+	        // jetzt haben sie die Balances geï¿½ndert da wir eine Rotation gemacht haben. --> wir updaten die und rufen dann in der obigen methode eventuell wieder einer Rotation auf
 	        updateBalance(el);
 	        updateBalance(pseudoRoot);
 	 
