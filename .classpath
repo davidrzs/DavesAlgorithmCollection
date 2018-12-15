@@ -11,19 +11,5 @@
 		</attributes>
 	</classpathentry>
 	<classpathentry exported="true" kind="con" path="org.eclipse.jdt.junit.JUNIT_CONTAINER/5"/>
-	<classpathentry kind="lib" path="/home/david/git/DavesAlgorithmCollection/lib/antlr4-runtime-4.7.1.jar"/>
-	<classpathentry kind="lib" path="/home/david/git/DavesAlgorithmCollection/lib/commons-lang3-3.8.1.jar"/>
-	<classpathentry kind="lib" path="/home/david/git/DavesAlgorithmCollection/lib/commons-text-1.5.jar"/>
-	<classpathentry kind="lib" path="/home/david/git/DavesAlgorithmCollection/lib/fastutil-8.2.2.jar"/>
-	<classpathentry kind="lib" path="/home/david/git/DavesAlgorithmCollection/lib/guava-26.0-jre.jar"/>
-	<classpathentry kind="lib" path="/home/david/git/DavesAlgorithmCollection/lib/jgrapht-bundle-1.3.0.jar"/>
-	<classpathentry kind="lib" path="/home/david/git/DavesAlgorithmCollection/lib/jgrapht-core-1.3.0.jar"/>
-	<classpathentry kind="lib" path="/home/david/git/DavesAlgorithmCollection/lib/jgrapht-demo-1.3.0.jar"/>
-	<classpathentry kind="lib" path="/home/david/git/DavesAlgorithmCollection/lib/jgrapht-ext-1.3.0.jar"/>
-	<classpathentry kind="lib" path="/home/david/git/DavesAlgorithmCollection/lib/jgrapht-guava-1.3.0.jar"/>
-	<classpathentry kind="lib" path="/home/david/git/DavesAlgorithmCollection/lib/jgrapht-io-1.3.0.jar"/>
-	<classpathentry kind="lib" path="/home/david/git/DavesAlgorithmCollection/lib/jgrapht-opt-1.3.0.jar"/>
-	<classpathentry kind="lib" path="/home/david/git/DavesAlgorithmCollection/lib/jgraphx-3.4.1.3.jar"/>
-	<classpathentry kind="lib" path="/home/david/git/DavesAlgorithmCollection/lib/jheaps-0.9.jar"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>

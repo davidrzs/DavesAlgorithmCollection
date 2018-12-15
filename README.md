@@ -27,6 +27,7 @@ These algorithms were implemented with the goal to experiment with them and many
 	- Adjacency list based graph class
 	- Matrix based graph class
 	- Weighted matrix graph class
+	- Union Find (using arrays)
 - *Simple Algorithms*
 	- Depth first search
 	- Breadth first search

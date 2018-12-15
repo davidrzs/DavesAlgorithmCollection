@@ -30,8 +30,13 @@ public class WeightedMatrixGraph {
 		return E;
 	}
 	
-	public void addEdge(int v, int w, int weight) {
+	public void addDirectedEdge(int v, int w, int weight) {
 		matrix[v][w] = weight;
+	}
+	
+	public void addUndirectedEdge(int v, int w, int weight) {
+		matrix[v][w] = weight;
+		matrix[w][v] = weight;
 	}
 	
 	
