@@ -1,3 +1,5 @@
+package shortestPaths;
+
 import org.jgrapht.*;
 import org.jgrapht.graph.*;
 import org.jgrapht.io.*;

@@ -1,3 +1,4 @@
+package graphDatastructures;
 import java.util.List;
 
 public class MatrixGraph implements Graph {

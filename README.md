@@ -8,39 +8,48 @@ These algorithms were implemented with the goal to experiment with them and many
 
 
 ## Implemented Algorithms:
-*Sorting*:
+
+**Datastructures**:
+ - AVL Tree
+ - LinkedList
+ - Queue
+ - Stack
+
+**Dynamic Programming**
+- Knapsack
+- CoinChange
+- StockOptimum
+- Paragraph Formatting / Optimal Line Break
+
+**Graphs**:
+- *Graph Datastructures*
+	- Graph interface
+	- Adjacency list based graph class
+	- Matrix based graph class
+	- Weighted matrix graph class
+- *Simple Algorithms*
+	- Depth first search
+	- Breadth first search
+- *Shortest Paths*
+	- None yet :(
+- *Minimal Spanning Trees*
+	- Kruskal
+	- Prim
+	- Reverse Kruskal
+
+**Sorting**:
 - Selection Sort
 - HeapSort
 - Bubble Sort
 - Sequential Merge Sort
 - IsSorted, a small program checking whether a given array is sorted.
 
-*Searching*:
+**Searching**:
 - Linear Search
 - Binary Search
 - Exponential Search
 - Interpolation Search
 
-*Graphs*:
- - Graph Interface
- - Adjacency list based graph class
- - Matrix based graph class
- - Depth first search
- - Breadth first search
- - Weighted matrix graph
- 
- 
- *Datastructures*:
- - AVL Tree
- - LinkedList
- - Queue
- - Stack
-
-*Dynamic Programming*
-- Knapsack
-- CoinChange
-- StockOptimum
-- Paragraph Formatting / Optimal Line Break
 
 ## License
 All the code in this repo is licensed under the permissive MIT license.

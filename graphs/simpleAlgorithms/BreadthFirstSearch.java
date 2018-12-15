@@ -1,4 +1,10 @@
+package simpleAlgorithms;
+
 import java.util.Queue;
+
+import graphDatastructures.*;
+
+
 import java.util.LinkedList;
 
 public class BreadthFirstSearch {

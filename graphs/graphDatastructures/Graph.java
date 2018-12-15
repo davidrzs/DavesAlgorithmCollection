@@ -1,3 +1,5 @@
+package graphDatastructures;
+
 import java.util.List;
 
 public interface Graph {

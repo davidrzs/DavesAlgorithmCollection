@@ -1,4 +1,7 @@
+package simpleAlgorithms;
+
 import java.util.Stack;
+import graphDatastructures.*;
 
 public class DepthFirstSearch {
 	
