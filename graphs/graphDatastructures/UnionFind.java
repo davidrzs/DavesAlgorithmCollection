@@ -22,7 +22,7 @@ public class UnionFind {
 		rep = new int[vertices];
 	}
 	
-	void make(int u) {
+	public void make(int u) {
 		rep[u] = u;
 		size[u] = 1;
 		HashSet<Integer> set = new HashSet<Integer>();
@@ -30,11 +30,11 @@ public class UnionFind {
 		members.set(u, set);
 	}
 	
-	int find(int u) {
+	public int find(int u) {
 		return rep[u];
 	}
 	
-	void union(int u, int v) {
+	public void union(int u, int v) {
 		int ru = rep[u];
 		int rv = rep[v];
 		
