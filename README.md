@@ -32,6 +32,7 @@ These algorithms were implemented with the goal to experiment with them and many
 - *Simple Algorithms*
 	- Depth first search
 	- Breadth first search
+	- Topological ordering of directed acyclic graph
 - *Shortest Paths*
 	- none yet ☹️
 - *Minimal Spanning Trees*
