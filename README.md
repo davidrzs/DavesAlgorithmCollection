@@ -20,6 +20,7 @@ These algorithms were implemented with the goal to experiment with them and many
 - CoinChange
 - StockOptimum
 - Paragraph Formatting / Optimal Line Break
+- Mars rover optimal path (path of max value)
 
 **Graphs**:
 - *Graph Datastructures*
@@ -42,13 +43,14 @@ These algorithms were implemented with the goal to experiment with them and many
 - Bubble Sort
 - Sequential Merge Sort
 - IsSorted, a small program checking whether a given array is sorted.
+- Quicksort
+- Recursive Mergesort
 
 **Searching**:
 - Linear Search
 - Binary Search
 - Exponential Search
 - Interpolation Search
-
 
 ## License
 All the code in this repo is licensed under the permissive MIT license.
