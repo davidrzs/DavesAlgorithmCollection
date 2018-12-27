@@ -22,6 +22,7 @@ These algorithms were implemented with the goal to experiment with them and many
 - Paragraph Formatting / Optimal Line Break
 - Mars rover optimal path (path of max value)
 - Hiking Problem (Subset Sum splitting items evenly into two bags with solution reconstruction)
+- Minimal Editing Distance (DNA mutation)
 
 **Graphs**:
 - *Graph Datastructures*
