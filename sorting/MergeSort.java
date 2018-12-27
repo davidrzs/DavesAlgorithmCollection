@@ -8,7 +8,6 @@ public class MergeSort {
 	static int[] PMergeSort(int[] arr, int l, int r) {
 		if(l != r) {
 			int m = (l+r) / 2;
-			System.out.println(m);
 			PMergeSort(arr,l,m);
 			PMergeSort(arr,m+1,r);
 			merge(arr,l,m,r);	

@@ -49,6 +49,8 @@ These algorithms were implemented with the goal to experiment with them and many
 - IsSorted, a small program checking whether a given array is sorted.
 - Quicksort
 - Recursive Mergesort
+- Insertion Sort with linear search
+- Insertion Sort with binary insertion
 
 **Searching**:
 - Linear Search
