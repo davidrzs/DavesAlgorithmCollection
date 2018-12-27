@@ -21,6 +21,7 @@ These algorithms were implemented with the goal to experiment with them and many
 - StockOptimum
 - Paragraph Formatting / Optimal Line Break
 - Mars rover optimal path (path of max value)
+- Hiking Problem (Subset Sum splitting items evenly into two bags with solution reconstruction)
 
 **Graphs**:
 - *Graph Datastructures*
