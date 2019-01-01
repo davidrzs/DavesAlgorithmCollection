@@ -17,6 +17,7 @@ These algorithms were implemented with the goal to experiment with them and many
 
 **Dynamic Programming**
 - Knapsack
+- Fleamarket Problem (Multi-constrained knapsack)
 - CoinChange
 - StockOptimum
 - Paragraph Formatting / Optimal Line Break
