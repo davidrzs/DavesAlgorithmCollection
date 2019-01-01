@@ -25,6 +25,7 @@ These algorithms were implemented with the goal to experiment with them and many
 - Hiking Problem (Subset Sum splitting items evenly into two bags with solution reconstruction)
 - Minimal Editing Distance (DNA mutation)
 - Longest Common Subsequence
+- Minimal Coin Change (minimal number of coins adding to a certain value) including solution reconstruction.
 
 **Graphs**:
 - *Graph Datastructures*
