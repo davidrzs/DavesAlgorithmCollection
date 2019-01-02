@@ -1,4 +1,13 @@
 
+/**
+ * 
+ * IMPORTANT NOTE. THIS CODE IS FLAWED. 
+ * check out dynamicProgramming/WaysOfCoinChange.java for a working example.
+ * 
+ * 
+ */
+
+
 import java.util.Arrays;
 
 public class CoinChange {

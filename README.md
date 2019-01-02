@@ -26,6 +26,7 @@ These algorithms were implemented with the goal to experiment with them and many
 - Minimal Editing Distance (DNA mutation)
 - Longest Common Subsequence
 - Minimal Coin Change (minimal number of coins adding to a certain value) including solution reconstruction.
+- Number of Different Ways to Change Coins 
 
 **Graphs**:
 - *Graph Datastructures*
