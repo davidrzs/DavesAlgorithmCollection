@@ -13,8 +13,12 @@ public class Kruskal {
 		
         ArrayList<DefaultEdge> allEdges = new ArrayList<>(graph.edgeSet());
         allEdges.sort(Comparator.comparingDouble(graph::getEdgeWeight));
-		
-        UnionFind<Integer> uf = new UnionFind<>(graph.vertexSet());
+		graphDatastructures.UnionFind uf = new graphDatastructures.UnionFind(graph.vertexSet().size());
+		for(Integer i : graph.vertexSet()) {
+			uf.make(i);
+		}
+        
+        //UnionFind<Integer> uf = new UnionFind<>(graph.vertexSet());
         int length = 0;
         for(DefaultEdge edge : allEdges) {
         	// check if we can add this edge
