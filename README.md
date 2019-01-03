@@ -40,7 +40,7 @@ These algorithms were implemented with the goal to experiment with them and many
 	- Breadth first search
 	- Topological ordering of directed acyclic graph
 - *Shortest Paths*
-	- none yet ☹️
+	- Kruskal
 - *Minimal Spanning Trees*
 	- none yet ☹️
 

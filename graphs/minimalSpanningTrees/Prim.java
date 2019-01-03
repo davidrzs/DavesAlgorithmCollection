@@ -1,11 +1,10 @@
 package minimalSpanningTrees;
 
-import graphDatastructures.WeightedMatrixGraph;
+import java.util.ArrayList;
+import java.util.Comparator;
 
-import java.util.List;
-
-import graphDatastructures.UnionFind;
-
+import org.jgrapht.alg.util.UnionFind;
+import org.jgrapht.graph.*;
 
 /**
  * The idea behind prims algorithm is to always pick the lowest weight edge that connects two different connected components.
@@ -15,21 +14,35 @@ import graphDatastructures.UnionFind;
  */
 
 public class Prim {
-	public static void computeMinimalSpanningTree(WeightedMatrixGraph graph) {
-		// make our unionfind datastructure:
-		UnionFind uf = new UnionFind(graph.V());
-		// init
-		for(int i = 0; i < graph.V(); i++) {
-			uf.make(i);
-		}
-		WeightedMatrixGraph minimalSpanningTree = new WeightedMatrixGraph(graph.V());
-		int sumOfMinimalSpanningTreeWeights = 0;
+
+	public static int minimalSpanningTree(SimpleWeightedGraph<Integer, DefaultEdge> graph) {
 		
-		for(int i = 0; i < graph.V(); i++) {
-			List<Integer> li =  graph.adj(i);
-			for(Integer nb : li) {
-				
-			}
-		}
+        ArrayList<DefaultEdge> allEdges = new ArrayList<>(graph.edgeSet());
+        allEdges.sort(Comparator.comparingDouble(graph::getEdgeWeight));
+		
+        UnionFind<Integer> uf = new UnionFind<>(graph.vertexSet());
+        
+        // we need a st
+        Integer startingVertex = graph.vertexSet().iterator().next();
+        
+        int length = 0;
+        
+        boolean hasNext = true;
+        while(uf.) {
+        	
+            ArrayList<DefaultEdge> allAdjacentEdges = new ArrayList<>(graph.outgoingEdgesOf(vertex));
+            allEdges.sort(Comparator.comparingDouble(graph::getEdgeWeight));
+        	
+        	// check if we can add this edge
+        	if(uf.find(graph.getEdgeSource(edge)) != uf.find(graph.getEdgeTarget(edge))) {
+        		// we now union the two components:
+        		uf.union(uf.find(graph.getEdgeSource(edge)), uf.find(graph.getEdgeTarget(edge)));
+        		System.out.println("Chose edge from " + graph.getEdgeSource(edge) + " to " + graph.getEdgeTarget(edge) + " with weight "+ graph.getEdgeWeight(edge));
+        		length += graph.getEdgeWeight(edge);
+        	}
+        }
+        
+		return length;
 	}
+
 }
