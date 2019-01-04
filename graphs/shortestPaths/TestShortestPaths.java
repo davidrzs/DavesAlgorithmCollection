@@ -1,6 +1,4 @@
-package minimalSpanningTrees;
-
-import org.jgrapht.graph.*;
+package shortestPaths;
 
 import static org.junit.jupiter.api.Assertions.*;
 
@@ -8,12 +6,14 @@ import org.jgrapht.graph.DefaultEdge;
 import org.jgrapht.graph.SimpleWeightedGraph;
 import org.junit.jupiter.api.Test;
 
+import java.util.HashMap;
+
+class TestShortestPaths {
 
 
-class TestMinimalSpanningTreeAlgos {
-	
-	
-	
+	/**
+	 * Creates a test graph. The same graph we are using in the minimal spanning tree test.
+	 */
 	SimpleWeightedGraph<Integer, DefaultEdge> createSampleGraph() {
 		SimpleWeightedGraph<Integer, DefaultEdge> graph = new SimpleWeightedGraph<>(DefaultEdge.class);
 		
@@ -121,22 +121,22 @@ class TestMinimalSpanningTreeAlgos {
 	
 
 	@Test
-	void testPrim() {
+	void testDijkstra() {
 		SimpleWeightedGraph<Integer, DefaultEdge> graph = createSampleGraph();
 		fail("Not yet implemented");
 	}
 
 	@Test
-	void testKruskal() {
+	void testBellmanFord() {
 		SimpleWeightedGraph<Integer, DefaultEdge> graph = createSampleGraph();
-		assertEquals(47,Kruskal.minimalSpanningTree(graph));
+		HashMap<Integer,Integer> dists = BellmanFord.BellmanFord(graph, 0);
+		assertTrue(13==dists.get(11));
 	}
 	
 	@Test
-	void testReverseKruskal() {
+	void testJohnson() {
 		SimpleWeightedGraph<Integer, DefaultEdge> graph = createSampleGraph();
 		fail("Not yet implemented");
 	}
-	
-	
+
 }
