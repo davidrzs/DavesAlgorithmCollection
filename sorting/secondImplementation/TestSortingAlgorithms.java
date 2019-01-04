@@ -14,7 +14,11 @@ class TestSortingAlgorithms {
 		assertEquals(Arrays.toString(referenceSolution),Arrays.toString(QuickSort.quickSort(arrayToBeSorted)));
 	}
 	
-	
+	@Test
+	void testHeapSort() {
+		int[] arrayToBeSorted = new int[] {5,2,99,12,6,4,4,91,-21,0,0,-3,1,6,4,2};
+		assertEquals(Arrays.toString(referenceSolution),Arrays.toString(HeapSort.heapSort(arrayToBeSorted)));
+	}	
 	
 	
 

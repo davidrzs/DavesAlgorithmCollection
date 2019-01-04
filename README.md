@@ -41,6 +41,7 @@ These algorithms were implemented with the goal to experiment with them and many
 	- Topological ordering of directed acyclic graph
 - *Shortest Paths*
 	- Bellman Ford
+	- Floyd-Warshall
 	- Dijkstra
 - *Minimal Spanning Trees*
 	- Kruskal
