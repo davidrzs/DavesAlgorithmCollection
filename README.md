@@ -40,9 +40,10 @@ These algorithms were implemented with the goal to experiment with them and many
 	- Breadth first search
 	- Topological ordering of directed acyclic graph
 - *Shortest Paths*
-	- Kruskal
+	- Bellman Ford
+	- Dijkstra
 - *Minimal Spanning Trees*
-	- none yet ☹️
+	- Kruskal
 
 **Sorting**:
 - Selection Sort

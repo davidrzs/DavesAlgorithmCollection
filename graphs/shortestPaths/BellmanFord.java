@@ -49,7 +49,7 @@ public class BellmanFord {
 //				}	
 //			}
 //		}
-		System.out.println(Arrays.toString(DP));
+		//System.out.println(Arrays.toString(DP));
 		for(int i = 0; i < DP.length;i++) {
 			distances.put(i, (int) DP[i]);
 		}

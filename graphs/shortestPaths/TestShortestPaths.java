@@ -123,7 +123,9 @@ class TestShortestPaths {
 	@Test
 	void testDijkstra() {
 		SimpleWeightedGraph<Integer, DefaultEdge> graph = createSampleGraph();
-		fail("Not yet implemented");
+		HashMap<Integer,Integer> dists = Dijkstra.Dijkstra(graph, 0);
+		//System.out.println(dists);
+		assertTrue(13==dists.get(11));
 	}
 
 	@Test
