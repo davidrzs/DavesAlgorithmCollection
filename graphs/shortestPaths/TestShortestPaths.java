@@ -6,6 +6,7 @@ import org.jgrapht.graph.DefaultEdge;
 import org.jgrapht.graph.SimpleWeightedGraph;
 import org.junit.jupiter.api.Test;
 
+import java.util.Arrays;
 import java.util.HashMap;
 
 class TestShortestPaths {
@@ -133,6 +134,14 @@ class TestShortestPaths {
 		SimpleWeightedGraph<Integer, DefaultEdge> graph = createSampleGraph();
 		HashMap<Integer,Integer> dists = BellmanFord.BellmanFord(graph, 0);
 		assertTrue(13==dists.get(11));
+	}
+	
+	@Test
+	void testFloydWarshall() {
+		SimpleWeightedGraph<Integer, DefaultEdge> graph = createSampleGraph();
+		int[][] dists = FloydWarshall.floydWarshall(graph);
+		//System.out.println(Arrays.deepToString(dists));
+		assertTrue(dists[0][11]==13);
 	}
 	
 	@Test

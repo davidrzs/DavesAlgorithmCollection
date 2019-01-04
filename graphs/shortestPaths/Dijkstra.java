@@ -59,7 +59,7 @@ public class Dijkstra {
 			vertexList[i] = to_add;
 		}
 		
-		System.out.println(PQ);
+		//System.out.println(PQ);
 		
 		// while there are still vertices in our PQ
 		while(!PQ.isEmpty()) {
