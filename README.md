@@ -27,6 +27,8 @@ These algorithms were implemented with the goal to experiment with them and many
 - Longest Common Subsequence
 - Minimal Coin Change (minimal number of coins adding to a certain value) including solution reconstruction.
 - Number of Different Ways to Change Coins 
+- Maximizing Arithmetic Expression (with + and *)
+- Longest Substring of balanced Parentheses and Brackets.
 
 **Graphs**:
 - *Graph Datastructures*
