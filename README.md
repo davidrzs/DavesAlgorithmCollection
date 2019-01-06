@@ -4,7 +4,9 @@ This repository is a collection of common algorithms from an algorithms and data
 All algorithms are implemented in Java and are NOT thread safe.
 
 ## On the state of these algorithms
-These algorithms were implemented with the goal to experiment with them and many of them were implemented from scratch from my memory (implementing what I could still remember from class). This repo is by no means complete / tested / safe to use. However, if you want to take a glimpse feel free to use my code as long as it complies with the MIT license.
+These algorithms were implemented with the goal to experiment with them and many of them were implemented from scratch from my memory (implementing what I could still remember from class). This repo is by no means complete / tested / safe to use.
+*Seriously: Using this code is really dangerous.* 
+However, if you want to take a glimpse feel free to use my code as long as it complies with the MIT license.
 
 
 ## Implemented Algorithms:
@@ -38,13 +40,16 @@ These algorithms were implemented with the goal to experiment with them and many
 	- Weighted matrix graph class
 	- Union Find (using arrays)
 - *Simple Algorithms*
-	- Depth first search
+	- Simple Depth first search
 	- Breadth first search
 	- Topological ordering of directed acyclic graph
+	- Directed Graph contains cycle ?
+	- Undirected graph contains cycle ?
 - *Shortest Paths*
 	- Bellman Ford
 	- Floyd-Warshall
 	- Dijkstra
+	- BFS Shortest Path
 - *Minimal Spanning Trees*
 	- Kruskal
 
