@@ -136,8 +136,6 @@ public class TopologicalOrdering {
 		}
 
 		out.println(longestPath);		
-		
 
-		scanner.close();
 	}
 }
