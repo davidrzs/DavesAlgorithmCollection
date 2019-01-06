@@ -143,6 +143,17 @@ class TestShortestPaths {
 		//System.out.println(Arrays.deepToString(dists));
 		assertTrue(dists[0][11]==13);
 	}
+
+	@Test
+	void testBFS() {
+		SimpleWeightedGraph<Integer, DefaultEdge> graph = createSampleGraph();
+		HashMap<Integer,Integer> dists = BFSShortestPath.breadthFirstSearch(graph,0);
+		System.out.println((dists));
+		assertTrue(dists.get(13)==4);
+		assertTrue(dists.get(12)==3);
+		assertTrue(dists.get(11)==2);
+		assertTrue(dists.get(9)==4);
+	}
 	
 	@Test
 	void testJohnson() {
