@@ -40,6 +40,7 @@ However, if you want to take a glimpse feel free to use my code as long as it co
 	- Matrix based graph class
 	- Weighted matrix graph class
 	- Union Find (using arrays)
+	- Weighted Union Find
 - *Simple Algorithms*
 	- Simple Depth first search
 	- Breadth first search
