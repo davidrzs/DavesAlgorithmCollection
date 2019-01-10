@@ -31,6 +31,7 @@ However, if you want to take a glimpse feel free to use my code as long as it co
 - Number of Different Ways to Change Coins 
 - Maximizing Arithmetic Expression (with + and *)
 - Longest Substring of balanced Parentheses and Brackets.
+- Maximum Sum increasing subsequence
 
 **Graphs**:
 - *Graph Datastructures*
