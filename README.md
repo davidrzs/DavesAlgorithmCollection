@@ -32,6 +32,7 @@ However, if you want to take a glimpse feel free to use my code as long as it co
 - Maximizing Arithmetic Expression (with + and *)
 - Longest Substring of balanced Parentheses and Brackets.
 - Maximum Sum increasing subsequence
+- Is string an interleafing of two other strings
 
 **Graphs**:
 - *Graph Datastructures*
