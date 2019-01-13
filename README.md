@@ -57,6 +57,7 @@ However, if you want to take a glimpse feel free to use my code as long as it co
 	- BFS Shortest Path
 - *Minimal Spanning Trees*
 	- Kruskal
+	- Prim
 
 **Sorting**:
 - Selection Sort

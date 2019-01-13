@@ -123,7 +123,7 @@ class TestMinimalSpanningTreeAlgos {
 	@Test
 	void testPrim() {
 		SimpleWeightedGraph<Integer, DefaultEdge> graph = createSampleGraph();
-		fail("Not yet implemented");
+		assertEquals(47,Prim.minimalSpanningTree(graph));
 	}
 
 	@Test
