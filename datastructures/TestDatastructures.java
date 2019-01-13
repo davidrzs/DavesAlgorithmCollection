@@ -3,6 +3,38 @@ import static org.junit.jupiter.api.Assertions.*;
 import org.junit.jupiter.api.Test;
 
 class TestDatastructures {
+	
+	
+	
+	
+	@Test
+	void testDecreaseKeyMinHeap() {
+		
+		
+		
+		DecreaseKeyMinHeap dc = new DecreaseKeyMinHeap(5);
+		dc.insert(new Integer2(12));
+		dc.insert(new Integer2(-4));
+		dc.insert(new Integer2(23));
+		dc.insert(new Integer2(2));
+		dc.insert(new Integer2(-23));
+		dc.initializeHeap();
+
+		assertTrue(((Integer2)dc.getMin()).val == -23);
+		dc.removeMin();
+		
+		assertTrue(((Integer2)dc.getMin()).val == -4);
+		dc.removeMin();
+		
+		assertTrue(((Integer2)dc.getMin()).val == 2);
+		dc.removeMin();
+		
+		assertTrue(((Integer2)dc.getMin()).val == 12);
+		dc.removeMin();
+		
+		assertTrue(((Integer2)dc.getMin()).val == 23);
+		dc.removeMin();
+	}
 
 	@Test
 	void testStack() {
@@ -130,6 +162,35 @@ class TestDatastructures {
 		assertEquals(1,list.get(0));
 		assertEquals(2,list.get(1));
 		assertEquals(3,list.get(2));
+	}
+	
+	static class Integer2 implements DecreaseKeyMinHeap.Entry{
+		int positionInHeap = 0;
+		int val;
+		
+		Integer2(int val){
+			this.val = val;
+		}
+		
+		@Override
+		public int compareTo(Object arg0) {
+			Integer2 i2 = (Integer2)arg0;
+			if(i2.val == this.val) {
+				return 0;
+			} else if(i2.val > this.val) {
+				return -1;
+			} return 1;
+		}
+
+		@Override
+		public int GetPositionInHeap() {
+			return positionInHeap;
+		}
+
+		@Override
+		public void SetPositionInHeap(int position) {
+			positionInHeap = position;
+		}
 	}
 
 	
