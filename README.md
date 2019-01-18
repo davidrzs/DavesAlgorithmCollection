@@ -67,6 +67,7 @@ However, if you want to take a glimpse feel free to use my code as long as it co
 - IsSorted, a small program checking whether a given array is sorted.
 - Quicksort
 - Recursive Mergesort
+- Natural 2-way Mergesort
 - Insertion Sort with linear search
 - Insertion Sort with binary insertion
 
