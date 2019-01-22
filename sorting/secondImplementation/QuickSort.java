@@ -5,7 +5,7 @@ public class QuickSort {
 
 	// second quicksort implementation to practice
 			
-	static int[] quickSort(int[] arr) {
+	public static int[] quickSort(int[] arr) {
 		try {
 			return recQuickSort(arr,0,arr.length-1);
 		} catch (Exception e) {
@@ -29,7 +29,7 @@ public class QuickSort {
 		int leftPointer = l;
 		int rightPointer = r-1;
 		do {
-			while(arr[leftPointer] <= pivot && leftPointer <= r-1) {
+			while(arr[leftPointer] <= pivot && leftPointer < r) {
 				leftPointer++;
 			}
 			while(arr[rightPointer] >= pivot && rightPointer > l) {
@@ -49,14 +49,12 @@ public class QuickSort {
 		
 		return leftPointer;
 	}
-	
-	
 	static int partitionLeft(int[] arr, int l, int r) {
 		int pivot = arr[l];
 		int leftPointer = l+1;
 		int rightPointer = r;
 		do {
-			while(arr[leftPointer] <= pivot && leftPointer <= r) {
+			while(arr[leftPointer] <= pivot && leftPointer < r) {
 				leftPointer++;
 			}
 			while(arr[rightPointer] >= pivot && rightPointer > l) {

@@ -1,6 +1,6 @@
 import java.util.Arrays;
 
-public class QuickSort {
+public class QuickSorter {
 
 	
 	// IT TOOK ME 4 HOURS TO GET THE INDICES RIGHT. THIS ALGORITHM IS TORTURE. 
