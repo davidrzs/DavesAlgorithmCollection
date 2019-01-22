@@ -29,6 +29,16 @@ class TestSearchingAlgorithms {
 	}
 	
 	@Test
+	void testBinarySearch2() {
+		assertEquals(4,BinarySearch2.binarySearch(arrayToSearch, 6));
+		assertEquals(0,BinarySearch2.binarySearch(arrayToSearch, 1));
+		assertEquals(18,BinarySearch2.binarySearch(arrayToSearch, 999));
+		assertEquals(-1,BinarySearch2.binarySearch(arrayToSearch, 7));
+		assertEquals(-1,BinarySearch2.binarySearch(arrayToSearch, 8));
+		assertEquals(-1,BinarySearch2.binarySearch(arrayToSearch, 24));
+	}
+	
+	@Test
 	void testExponentialSearch() {
 		assertEquals(4,ExponentialSearch.exponentialSearch(arrayToSearch, 6));
 		assertEquals(0,ExponentialSearch.exponentialSearch(arrayToSearch, 1));

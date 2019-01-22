@@ -19,6 +19,13 @@ class TestSortingAlgorithms {
 		int[] arrayToBeSorted = new int[] {5,2,99,12,6,4,4,91,-21,0,0,-3,1,6,4,2};
 		assertEquals(Arrays.toString(referenceSolution),Arrays.toString(HeapSort.heapSort(arrayToBeSorted)));
 	}	
+	@Test
+	void testInsertionSort2() {
+		int[] arrayToBeSorted = new int[] {5,2,99,12,6,4,4,91,-21,0,0,-3,1,6,4,2};
+		assertEquals(Arrays.toString(referenceSolution),Arrays.toString(InsertionSort2.insertionSort(arrayToBeSorted)));
+		assertEquals(Arrays.toString(new int[] {-1,0,1,2,3,4,5}),Arrays.toString(InsertionSort2.insertionSort(new int[] {5,4,2,3,0,-1,1})));
+
+	}	
 	
 	
 
