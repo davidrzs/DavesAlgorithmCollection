@@ -49,6 +49,7 @@ public class QuickSort {
 		
 		return leftPointer;
 	}
+	
 	static int partitionLeft(int[] arr, int l, int r) {
 		int pivot = arr[l];
 		int leftPointer = l+1;
