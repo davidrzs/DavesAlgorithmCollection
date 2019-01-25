@@ -6,8 +6,6 @@ public class LongestAscendingSubsequence2 {
 	public static void main(String[] args) {
 		int[] arr = new int[] {15,27,14,38,26,55,46,65,85};
 		System.out.println(longestAscendingSubsequence(arr));
-		//int[] tt = new int[] {1,2,4,5};
-		//System.out.println(binarySearch(tt,3));
 	}
 	
 	static List<Integer> longestAscendingSubsequence(int[] arr){
