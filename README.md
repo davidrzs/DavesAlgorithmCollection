@@ -34,6 +34,7 @@ However, if you want to take a glimpse feel free to use my code as long as it co
 - Longest Substring of balanced Parentheses and Brackets.
 - Maximum Sum increasing subsequence
 - Is string an interleafing of two other strings
+- EggDropping : Given a number of Eggs and Floors returns minimal number of tries to find out at which level eggs start braking.
 
 **Graphs**:
 - *Graph Datastructures*
