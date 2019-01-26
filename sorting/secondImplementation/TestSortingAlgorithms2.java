@@ -30,8 +30,8 @@ class TestSortingAlgorithms2 {
 	@Test
 	void testQuickSort2() {
 		int[] arrayToBeSorted = new int[] {5,2,99,12,6,4,4,91,-21,0,0,-3,1,6,4,2};
-		assertEquals(Arrays.toString(referenceSolution),Arrays.toString(QuickSort2.recQuickSort(arrayToBeSorted,0,arrayToBeSorted.length)));
-		assertEquals(Arrays.toString(new int[] {-1,0,1,2,3,4,5}),Arrays.toString(QuickSort2.recQuickSort(new int[] {5,4,2,3,0,-1,1},0,7)));
-	}		
+		assertEquals(Arrays.toString(referenceSolution),Arrays.toString(QuickSort2.recQuickSort(arrayToBeSorted,0,arrayToBeSorted.length-1)));
+		assertEquals(Arrays.toString(new int[] {-1,0,1,2,3,4,5}),Arrays.toString(QuickSort2.recQuickSort(new int[] {5,4,2,3,0,-1,1},0,6)));
+	}
 
 }
