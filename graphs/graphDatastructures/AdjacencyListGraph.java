@@ -54,6 +54,18 @@ public class AdjacencyListGraph implements Graph, Cloneable {
 		return toRet;
 	}
 	
+	public int maxVertex() {
+		int cMaxVertex = 0;
+		int cMax = 0;
+		for(int i = 0; i < V; i++) {
+			if(cMax < nodes[i].size()) {
+				cMax = nodes[i].size();
+				cMaxVertex = i;
+			}
+		}
+		return cMaxVertex;
+	}
+	
 	public void removeEdge(int v, int w) {
 		
 		// we must remove the edge from two lists in our adjacency list.
@@ -75,7 +87,7 @@ public class AdjacencyListGraph implements Graph, Cloneable {
 		int temp2 = it2.next();
 		
 		while(temp2 != v) {	
-			temp2 = it1.next();
+			temp2 = it2.next();
 		}
 		if(temp2 == v) {
 			it2.remove();
