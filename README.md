@@ -63,6 +63,8 @@ However, if you want to take a glimpse feel free to use my code as long as it co
 - *Minimal Spanning Trees*
 	- Kruskal
 	- Prim
+- *Advanced Algorithms*
+	- Find Euler Tour
 
 **Sorting**:
 - Selection Sort
