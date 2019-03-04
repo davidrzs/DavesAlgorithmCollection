@@ -11,9 +11,7 @@ public class EulerTour {
 	public static AdjacencyListGraph getGraph() {
 		
 		AdjacencyListGraph graph = new AdjacencyListGraph(10);
-		
-		// the graph also contains two self loops
-		
+				
 		graph.addEdge(1, 2);
 		graph.addEdge(1, 4);
 		graph.addEdge(2, 3);
