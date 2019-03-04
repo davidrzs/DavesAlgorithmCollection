@@ -6,7 +6,7 @@ import java.util.List;
 public class AdjacencyListGraph implements Graph {
 	
 	private int E;
-	private final int V;
+	private int V;
 	
 	// we need to do this since I have a second linked list in my buildpath.
 	private java.util.LinkedList<Integer>[] nodes;
@@ -39,6 +39,18 @@ public class AdjacencyListGraph implements Graph {
 	
 	public List<Integer> adj(int w){
 		return nodes[w];
+	}
+	
+
+	/**
+	 * is used to get euler tours of a graph.
+	 */
+	public AdjacencyListGraph clone() throws CloneNotSupportedException {
+		AdjacencyListGraph clonedObj = (AdjacencyListGraph) super.clone();
+	    clonedObj.nodes = this.nodes.clone();
+	    clonedObj.E = this.E;
+	    clonedObj.V = this.V;
+	    return clonedObj;
 	}
 
 
