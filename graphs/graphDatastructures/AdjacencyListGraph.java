@@ -4,6 +4,14 @@ import java.util.Iterator;
 import java.util.List;
 
 
+/**
+ * 
+ * A class to represent an unweighted undirected graph.
+ * 
+ * @author David
+ *
+ */
+
 public class AdjacencyListGraph implements Graph, Cloneable {
 	
 	private int E;
@@ -33,8 +41,17 @@ public class AdjacencyListGraph implements Graph, Cloneable {
 	
 	public void addEdge(int v, int w) {
 		nodes[v].add(w);
-		// since we are working with directed graphs
-		//nodes[w].add(v);
+		nodes[w].add(v);
+		E++;
+	}
+	
+	@Override
+	public String toString() {
+		String toRet = "";
+		for(int i = 0; i < V; i++) {
+			toRet += ( Integer.toString(i) + " " + nodes[i].toString() + "\n");
+		}
+		return toRet;
 	}
 	
 	public void removeEdge(int v, int w) {
@@ -77,6 +94,7 @@ public class AdjacencyListGraph implements Graph, Cloneable {
 	/**
 	 * is used to get euler tours of a graph.
 	 */
+	@Override
 	public AdjacencyListGraph clone() throws CloneNotSupportedException {
 		AdjacencyListGraph clonedObj = (AdjacencyListGraph) super.clone();
 	    clonedObj.nodes = this.nodes.clone();
