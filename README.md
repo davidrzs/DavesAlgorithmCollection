@@ -64,7 +64,8 @@ However, if you want to take a glimpse feel free to use my code as long as it co
 	- Kruskal
 	- Prim
 - *Advanced Algorithms*
-	- Find Euler Tour
+	- Find euler tour
+	- Find cut vertices and bridges
 
 **Sorting**:
 - Selection Sort
