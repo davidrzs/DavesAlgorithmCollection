@@ -42,7 +42,7 @@ public class CutVerticesAndBridges {
 
 	public static void main(String[] args) {
 		int startingVertex = 4;
-		boolean[] visited = 
+		boolean[] visited = new boolean[1];
 		
 	}
 	
