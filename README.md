@@ -75,6 +75,7 @@ However, if you want to take a glimpse feel free to use my code as long as it co
 - Sequential Merge Sort
 - IsSorted, a small program checking whether a given array is sorted.
 - Quicksort
+- Quicksort with random pivot
 - Recursive Mergesort
 - Natural 2-way Mergesort
 - Insertion Sort with linear search
@@ -85,6 +86,9 @@ However, if you want to take a glimpse feel free to use my code as long as it co
 - Binary Search
 - Exponential Search
 - Interpolation Search
+
+**Selecting**:
+- Quickselect with random pivot
 
 **Probabilistic Algorithms**
 - Random Coins (calculate expected value and variance)
