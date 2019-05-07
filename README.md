@@ -21,6 +21,7 @@ However, if you want to take a glimpse feel free to use my code as long as it co
  - Queue
  - Stack
  - DecreaseKey Min Heap (like a priority queue but objects in the heap that change attributes can be reordered in log(n) time.)
+ - SkipList
 
 **Dynamic Programming**
 - Knapsack
