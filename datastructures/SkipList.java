@@ -7,20 +7,10 @@ public class SkipList {
 	SkipListNode head;
 	SkipListNode tail;
 	
-	int skipListHeight = 15;
+	int skipListHeight;
 	
 	
-	public SkipList() {
-		rand = new Random();
-		head = new SkipListNode(Integer.MIN_VALUE);
-		tail = new SkipListNode(Integer.MAX_VALUE);
-		
-		for(int i = 0; i < skipListHeight;i++) {
-			head.after[i] = tail;			
-		}
-	}
 	
-	// terrible to duplicate code - but i am really lazy right now
 	public SkipList(int m) {
 		skipListHeight = m;
 		rand = new Random();
@@ -32,6 +22,7 @@ public class SkipList {
 		}
 	}
 	
+	// this method exists only for debugging purposes
 	@Override
 	public String toString() {
 		String out = "";
@@ -47,7 +38,7 @@ public class SkipList {
 	
 	
 	public int get(int position) {
-		// this is a terrible way of doing this but its fine for the unit test - i am lazy at this point
+		// this is a terrible way of doing this but its fine for the unit test
 		int ctr = -1;
 		SkipListNode currentNode = head;
 		while(ctr<position) {
@@ -59,6 +50,7 @@ public class SkipList {
 	
 	
 	public void add(int value) {
+		// we need to store the predecessor on every level in order to add it to the skiplist
 		SkipListNode[] predecessorList = new SkipListNode[skipListHeight];
 		SkipListNode currentNode = head;
 		int searchLevel = skipListHeight-1;
@@ -81,29 +73,14 @@ public class SkipList {
 		} else {
 			SkipListNode newNode = new SkipListNode(value);
 			// now we need to add it to our skiplist
+			// we go up the level by level
 			int level = 0;
 			do {
-				/*
-				print(42);
-				// set the new successor
-				newNode.after[level] = currentNode.after[level];
-				// set us as the sucessor of our predecessor
-				currentNode.after[level] = newNode;
-				//print(Integer.toString(level));*/
 				newNode.after[level] = predecessorList[level].after[level];
 				predecessorList[level].after[level] = newNode;
-				
 				level++;
 			}while(rand.nextBoolean() == true && level < skipListHeight);
 		}
-	}
-
-	public void remove() {
-		
-	}
-	
-	public int find() {
-		return 0;
 	}
 	
 	
@@ -133,9 +110,6 @@ public class SkipList {
 	}
 	
 	
-	public static void print(String s) {
-		System.out.println(s);
-	}
 	
 }
 

@@ -8,19 +8,9 @@ import java.util.LinkedList;
 
 class TestSkipList {
 
-	// 	@Test
-	void dummyTest() {
-		SkipList skl = new SkipList();
-		System.out.println(skl);
-		skl.add(12);
-		skl.add(1);
-		skl.add(1234);
-		skl.add(-213663);
-		System.out.println(skl);
-	}
 	
 	@Test
-	void test() {
+	void correctnessTest() {
 		int numberOfIterations = 10000;
 		
 		SkipList SLBench = new SkipList(15);
