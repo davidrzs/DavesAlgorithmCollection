@@ -38,7 +38,7 @@ However, if you want to take a glimpse feel free to use my code as long as it co
 - Longest Substring of balanced Parentheses and Brackets.
 - Maximum Sum increasing subsequence
 - Is string an interleafing of two other strings
-- EggDropping : Given a number of Eggs and Floors returns minimal number of tries to find out at which level eggs start braking.
+- EggDropping : Given a number of Eggs and Floors returns minimal number of tries to find out at which level eggs start breaking.
 
 **Graphs**:
 - *Graph Datastructures*
@@ -66,6 +66,7 @@ However, if you want to take a glimpse feel free to use my code as long as it co
 - *Advanced Algorithms*
 	- Find euler tour
 	- Find cut vertices and bridges
+	- Min Cut (Karger's Algorithm)
 
 **Sorting**:
 - Selection Sort
@@ -74,6 +75,7 @@ However, if you want to take a glimpse feel free to use my code as long as it co
 - Sequential Merge Sort
 - IsSorted, a small program checking whether a given array is sorted.
 - Quicksort
+- Quicksort with random pivot
 - Recursive Mergesort
 - Natural 2-way Mergesort
 - Insertion Sort with linear search
@@ -84,6 +86,18 @@ However, if you want to take a glimpse feel free to use my code as long as it co
 - Binary Search
 - Exponential Search
 - Interpolation Search
+
+**Selecting**:
+- Quickselect with random pivot
+
+**Probabilistic Algorithms**
+- Random Coins (calculate expected value and variance)
+- Winter Season (probabilistic DP)
+- Random Triangles (probabilistic graph theory)
+- Miller-Rabin primality test
+- Target Shooting
+	- PI approximation
+	- Monte Carlo Integration
 
 ## License
 All the code in this repository is licensed under the permissive MIT license.
