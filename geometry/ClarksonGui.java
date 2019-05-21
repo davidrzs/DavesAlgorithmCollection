@@ -66,7 +66,7 @@ public class ClarksonGui extends Application {
 		
 		scene.getStylesheets().add("./stylesheet.css");
 		primaryStage.setScene(scene);
-		primaryStage.setTitle("ETH Zurich 2019");
+		primaryStage.setTitle("Clarkson's Algorithm - Minimal Enclosing Circle");
 		primaryStage.setResizable(false);
 		primaryStage.show();
 	}
@@ -87,24 +87,18 @@ public class ClarksonGui extends Application {
 	public static void update(Canvas canvas) {
 		//Clear canvas
 		GraphicsContext gc = canvas.getGraphicsContext2D();
+
+		Clarkson.findSmallestEnclosingCircle(points, circ, canvas);
+
+		// clear the screen
 		gc.clearRect(0, 0, canvas.getWidth(), canvas.getHeight());
 				
 		//draw all points
 		for(Point p: points) {
 			p.drawOnCanvas(canvas);
 		}
-		
-		
-		Clarkson.findSmallestEnclosingCircle(points, circ, canvas);
-		
+		// draw the circle
 		circ.drawOnCanvas(canvas);
-		
-				
-		//TODO: Draw desired stuff
-		/*
-		 * You can draw on the canvas using the gc. methods
-		 */
-		
 		
 		
 		

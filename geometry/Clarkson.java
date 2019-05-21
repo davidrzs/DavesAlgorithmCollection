@@ -14,26 +14,27 @@ public class Clarkson {
 		if(points.size() < 3) {
 			return;
 		}
-	
+		int nrOfIterations = 0;
 		while(!allPointsInCircle(points, circ)) {
+			nrOfIterations++;
 			// randomly shuffle the points
 			Collections.shuffle(points);
 			getSmallestEnclosingCircle(points.get(0), points.get(1), points.get(2), circ);
-			circ.drawOnCanvas(canvas);
-			try {
-				Thread.sleep(10);
-				System.out.println("all points in circle");
-			}catch(Exception ex) {
-				
-			}
+
 		}
-		System.out.println("all points in circle");
+		System.out.println("all points in circle in " + nrOfIterations + " iterations.");
 	}
 	
+	/*
+	 * this code is brutally inefficient - perhaps i will improve it when i have time
+	 */
 	public static void getSmallestEnclosingCircle(Point p1, Point p2, Point p3, Circle circ) {
 		ArrayList<Circle> cList = new ArrayList<Circle>(4);
-
-		cList.add(makeCircle3Points(p1,p2,p3));
+		Circle c1 = makeCircle3Points(p1,p2,p3);
+		// since c1 can be null if the points are linearly dependent:
+		if(c1 != null ){
+			cList.add(c1);
+		}
 		cList.add(makeCircle2Points(p1,p2));
 		cList.add(makeCircle2Points(p2,p3));
 		cList.add(makeCircle2Points(p3,p1));
@@ -45,7 +46,7 @@ public class Clarkson {
 				itC.remove();
 			}
 		}
-		System.out.println(cList);		
+		// System.out.println(cList);		
 		Circle minCircle = new Circle(0,0,Double.MAX_VALUE);
 		for(Circle tempCirc : cList) {
 			if(tempCirc.radius <= minCircle.radius) {
