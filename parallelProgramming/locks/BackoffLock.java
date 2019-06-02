@@ -8,28 +8,40 @@
  */
 package locks;
 
+import java.util.concurrent.atomic.AtomicBoolean;
+
 /**
  * @author david
  *
  */
 public class BackoffLock implements Lock {
 
-	/* (non-Javadoc)
-	 * @see locks.Lock#lock()
-	 */
+	AtomicBoolean locked = new AtomicBoolean(false);
+	Backoff backoff = new Backoff(1,10);
+	
 	@Override
 	public void lock() {
-		// TODO Auto-generated method stub
-
+		while(true) {
+			while(locked.get()) {
+				// spin while it is locked				
+			}
+			// it unlocked -> lets try to get it:
+			if(!locked.getAndSet(true)) {
+				return;
+			} else {
+				try {
+					backoff.backoff();
+				} catch (InterruptedException e) {
+					System.out.println("since this is just for training we don't care about errors.");
+					e.printStackTrace();
+				}
+			}
+		}
 	}
 
-	/* (non-Javadoc)
-	 * @see locks.Lock#unlock()
-	 */
 	@Override
 	public void unlock() {
-		// TODO Auto-generated method stub
-
+		locked.set(false);
 	}
 
 }

@@ -107,6 +107,7 @@ However, if you want to take a glimpse feel free to use my code as long as it co
 - Bakery Lock
 - TAS lock (test-and-set)
 - TTAS lock (test-and-test-and-set)
+- TTAS based backoff lock  (TTAS with backoff in case of failure)
 - Simple test cases for the locks
 
 

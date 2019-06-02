@@ -23,7 +23,7 @@ class TestLocks {
 	volatile int resultBakery;
 	volatile int resultTAS;
 	volatile int resultTTAS;
-
+	volatile int resultBackoff;
 	
 	@Test
 	void testPeterson() throws InterruptedException {
@@ -238,6 +238,40 @@ class TestLocks {
 	
 	
 	
+	@Test
+	void testBackoff() throws InterruptedException {
+		// init
+		int sumTill = 100000;
+		// better keep the number small to test
+		int nrOfThreads = 5;
+		resultBackoff = 0;
+		
+		Lock l1 = new BackoffLock();	
+		
+		Thread[] th = new Thread[nrOfThreads];
+	
+		for(int k = 0; k < nrOfThreads; k++) {
+			th[k] = new Thread(()-> {
+
+				for(int i = 0; i < sumTill; i++) {
+					l1.lock();
+					resultBackoff+=1;
+					l1.unlock();				
+				}
+			});
+			th[k].setName(Integer.toString(k));
+		}
+		
+		for(int k = 0; k < nrOfThreads; k++) {
+			th[k].start();
+		}
+		
+		for(int k = 0; k < nrOfThreads; k++) {
+			th[k].join();
+		}
+		
+		assertEquals(sumTill*nrOfThreads,resultBackoff);
+	}
 	
 	
 	
