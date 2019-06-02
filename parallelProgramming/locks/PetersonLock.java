@@ -27,7 +27,7 @@ public class PetersonLock implements Lock {
 
 		if(myId == 0) {
 			// signal that we would like to enter the critical section
-			iWannaEnterCriticalSection0 = false;
+			iWannaEnterCriticalSection0 = true;
 			// lets tell the other thread that we are prepared to wait.
 			iWillWait = myId;
 			// as long as the other wants to go and i am the one who is waiting i wont enter
@@ -36,7 +36,7 @@ public class PetersonLock implements Lock {
 			}		
 		} else {
 			// signal that we would like to enter the critical section
-			iWannaEnterCriticalSection1 = false;
+			iWannaEnterCriticalSection1 = true;
 			// lets tell the other thread that we are prepared to wait.
 			iWillWait = myId;
 			// as long as the other wants to go and i am the one who is waiting i wont enter
