@@ -13,17 +13,14 @@ import org.junit.jupiter.api.Test;
  * File written by davidrzs - David Zollikofer 
  */
 
-/**
- * @author david
- *
- */
 
-import java.util.concurrent.locks.*;
 
 class TestLocks {
 
+	// we must define them here because we cannot define volatile vars in methods
 	volatile int resultPeterson;
-	
+	volatile int resultFilter;
+
 	@Test
 	void testPeterson() throws InterruptedException {
 		// init
@@ -31,7 +28,6 @@ class TestLocks {
 		resultPeterson = 0;
 		Lock l1 = new PetersonLock();
 		
-		ReentrantLock l2 = new ReentrantLock();
 	
 		Thread t1 = new Thread(()-> {
 			for(int i = 0; i < sumTill; i++) {
@@ -41,6 +37,7 @@ class TestLocks {
 				resultPeterson+=1;
 				// we have this while loop to give the volatile update some time.
 				while(resultPeterson < oldVal+1) {
+					System.out.println("fuck");
 				}
 				
 				l1.unlock();
@@ -71,5 +68,70 @@ class TestLocks {
 		assertEquals(sumTill*2,resultPeterson);
 		
 	}
+	
+	
+	@Test
+	void testFilter() throws InterruptedException {
+		// init
+		int sumTill = 1000;
+		int nrOfThreads = 15;
+		
+		resultFilter = 0;
+		Lock l1 = new FilterLock(nrOfThreads);
+		
+		
+		Thread[] th = new Thread[nrOfThreads];
+	
+		for(int k = 0; k < nrOfThreads; k++) {
+			th[k] = new Thread(()-> {
+				
+
+				for(int i = 0; i < sumTill; i++) {
+					l1.lock();
+					
+					int oldVal = resultFilter;
+					resultFilter+=1;
+					// we have this while loop to give the volatile update some time.
+					while(resultFilter < oldVal+1) {
+					}
+					
+					l1.unlock();				
+				}
+			});
+			
+			th[k].setName(Integer.toString(k));
+		}
+		
+	
+		for(int k = 0; k < nrOfThreads; k++) {
+			th[k].start();
+		}
+		
+	
+		
+		for(int k = 0; k < nrOfThreads; k++) {
+			th[k].join();
+		}
+		
+		
+		assertEquals(sumTill*nrOfThreads,resultFilter);
+	}
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
 
 }
