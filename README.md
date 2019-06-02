@@ -103,6 +103,9 @@ However, if you want to take a glimpse feel free to use my code as long as it co
 
 **Locks**
 - Peterson Lock
+- Filter Lock
+- Bakery Lock
+- Simple test cases for the locks
 
 
 ## License

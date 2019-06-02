@@ -20,7 +20,9 @@ class TestLocks {
 	// we must define them here because we cannot define volatile vars in methods
 	volatile int resultPeterson;
 	volatile int resultFilter;
+	volatile int resultBakery;
 
+	
 	@Test
 	void testPeterson() throws InterruptedException {
 		// init
@@ -32,15 +34,11 @@ class TestLocks {
 		Thread t1 = new Thread(()-> {
 			for(int i = 0; i < sumTill; i++) {
 				l1.lock();
-				
-				int oldVal = resultPeterson;
-				resultPeterson+=1;
-				// we have this while loop to give the volatile update some time.
-				while(resultPeterson < oldVal+1) {
-					System.out.println("fuck");
+				try {
+					resultPeterson+=1;
+				} finally {
+					l1.unlock();					
 				}
-				
-				l1.unlock();
 			}
 		});
 		
@@ -54,12 +52,12 @@ class TestLocks {
 		
 		for(int i = 0; i < sumTill; i++) {
 			l1.lock();
-			int oldVal = resultPeterson;
-			resultPeterson+=1;
-			while(resultPeterson < oldVal+1) {
+			l1.lock();
+			try {
+				resultPeterson+=1;
+			} finally {
+				l1.unlock();					
 			}
-			l1.unlock();
-
 		}
 		
 			
@@ -118,6 +116,50 @@ class TestLocks {
 	}
 	
 	
+	
+	
+	@Test
+	void testBakery() throws InterruptedException {
+		// init
+		int sumTill = 100;
+		// better keep the number small to test
+		int nrOfThreads = 5;
+		
+		resultBakery = 0;
+		
+		Lock l1 = new BakeryLock(nrOfThreads);
+		
+		
+		Thread[] th = new Thread[nrOfThreads];
+	
+		for(int k = 0; k < nrOfThreads; k++) {
+			th[k] = new Thread(()-> {
+				
+
+				for(int i = 0; i < sumTill; i++) {
+					l1.lock();
+					resultBakery+=1;
+					l1.unlock();				
+				}
+			});
+			
+			th[k].setName(Integer.toString(k));
+		}
+		
+	
+		for(int k = 0; k < nrOfThreads; k++) {
+			th[k].start();
+		}
+		
+	
+		
+		for(int k = 0; k < nrOfThreads; k++) {
+			th[k].join();
+		}
+		
+		
+		assertEquals(sumTill*nrOfThreads,resultBakery);
+	}
 	
 	
 	
