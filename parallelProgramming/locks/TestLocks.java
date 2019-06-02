@@ -21,6 +21,8 @@ class TestLocks {
 	volatile int resultPeterson;
 	volatile int resultFilter;
 	volatile int resultBakery;
+	volatile int resultTAS;
+	volatile int resultTTAS;
 
 	
 	@Test
@@ -163,9 +165,75 @@ class TestLocks {
 	
 	
 	
+	@Test
+	void testTAS() throws InterruptedException {
+		// init
+		int sumTill = 100000;
+		// better keep the number small to test
+		int nrOfThreads = 5;
+		resultTAS = 0;
+		
+		Lock l1 = new TASLock();	
+		
+		Thread[] th = new Thread[nrOfThreads];
 	
+		for(int k = 0; k < nrOfThreads; k++) {
+			th[k] = new Thread(()-> {
+
+				for(int i = 0; i < sumTill; i++) {
+					l1.lock();
+					resultTAS+=1;
+					l1.unlock();				
+				}
+			});
+			th[k].setName(Integer.toString(k));
+		}
+		
+		for(int k = 0; k < nrOfThreads; k++) {
+			th[k].start();
+		}
+		
+		for(int k = 0; k < nrOfThreads; k++) {
+			th[k].join();
+		}
+		
+		assertEquals(sumTill*nrOfThreads,resultTAS);
+	}
 	
+	@Test
+	void testTTAS() throws InterruptedException {
+		// init
+		int sumTill = 100000;
+		// better keep the number small to test
+		int nrOfThreads = 5;
+		resultTAS = 0;
+		
+		Lock l1 = new TTASLock();	
+		
+		Thread[] th = new Thread[nrOfThreads];
 	
+		for(int k = 0; k < nrOfThreads; k++) {
+			th[k] = new Thread(()-> {
+
+				for(int i = 0; i < sumTill; i++) {
+					l1.lock();
+					resultTAS+=1;
+					l1.unlock();				
+				}
+			});
+			th[k].setName(Integer.toString(k));
+		}
+		
+		for(int k = 0; k < nrOfThreads; k++) {
+			th[k].start();
+		}
+		
+		for(int k = 0; k < nrOfThreads; k++) {
+			th[k].join();
+		}
+		
+		assertEquals(sumTill*nrOfThreads,resultTAS);
+	}
 	
 	
 	
