@@ -21,7 +21,8 @@ import javafx.scene.control.Button;
 import javafx.scene.layout.BorderPane;
 import javafx.scene.layout.Pane;
 import javafx.scene.layout.VBox;
-
+import javafx.scene.control.RadioButton;
+import javafx.scene.control.ToggleGroup;
 
 @SuppressWarnings("restriction")
 public class ConvexHullGui extends Application {
@@ -38,11 +39,25 @@ public class ConvexHullGui extends Application {
 		 
 		reset.setText("Reset Canvas");
 				
+		// Group
+		ToggleGroup group = new ToggleGroup();
+		 
+		// Radio 1: Jarvis Wrap
+		RadioButton button1 = new RadioButton("Jarvis Warp");
+		button1.setToggleGroup(group);
+		button1.setSelected(true);
+		 
+		// Radio 3: Graham Scan
+		RadioButton button2 = new RadioButton("Graham Scan");
+		button2.setToggleGroup(group);
+		
+		
 		//Configure layout
 		BorderPane bp = new BorderPane();
 		Pane wrapperPane = new Pane();
 		wrapperPane.getChildren().add(canvas);
 		VBox leftBox = new VBox(reset);
+		leftBox.getChildren().addAll(button1, button2);
 		leftBox.setAlignment(Pos.CENTER);
 		bp.setCenter(wrapperPane);
 		bp.setLeft(leftBox);
@@ -54,22 +69,30 @@ public class ConvexHullGui extends Application {
 				
 		//Event handling
 		reset.setOnAction(event -> {
-			//TODO: Fill in functionality of reset button
 			reset(canvas);
 		});
 
 		canvas.setOnMouseClicked(event -> {
-			//TODO: Fill in what happens upon mouse click on canvas
 			Point p = new Point(event.getX(), event.getY());
 			points.add(p);
-			update(canvas);
+			
+			Runnable runnable = () -> {
+				RadioButton selected = (RadioButton) group.getSelectedToggle();
+				if(selected == button1) {
+					update(canvas, Algorithm.JARVIS_MARCH);
+				} else {
+					update(canvas, Algorithm.GRAHAM_SCAN);
+				}
+			};
+			Thread t1 = new Thread(runnable);
+			t1.start();
 		});
 				
 		Scene scene = new Scene(bp, 900, 900);
 		
 		scene.getStylesheets().add("./stylesheet.css");
 		primaryStage.setScene(scene);
-		primaryStage.setTitle("Jarvis Warp");
+		primaryStage.setTitle("Convex Hull Algorithms");
 		primaryStage.setResizable(false);
 		primaryStage.show();
 	}
@@ -87,11 +110,15 @@ public class ConvexHullGui extends Application {
 	/**
 	 * Update canvas
 	 */
-	public static void update(Canvas canvas) {
+	public static void update(Canvas canvas, Algorithm algorithm) {
 		//Clear canvas
 		GraphicsContext gc = canvas.getGraphicsContext2D();
 
-		JarvisWarp.findConvexHull(points, convexHull, canvas);
+		if(algorithm == Algorithm.GRAHAM_SCAN) {
+			GrahamScan.findConvexHull(points, convexHull, canvas);
+		} else {
+			JarvisWarp.findConvexHull(points, convexHull, canvas);
+		}
 
 		// clear the screen
 		gc.clearRect(0, 0, canvas.getWidth(), canvas.getHeight());
@@ -111,6 +138,10 @@ public class ConvexHullGui extends Application {
 		launch();
 	}
 	
+	
+	static enum Algorithm{
+		JARVIS_MARCH, GRAHAM_SCAN
+	}
 	
 }
 

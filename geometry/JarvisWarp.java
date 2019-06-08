@@ -27,6 +27,14 @@ public class JarvisWarp {
 		do {
 			nextPoint = findNext(nextPoint, points);
 			chp.add(nextPoint);
+//		ch.pointsOnConvexHull = chp;
+//		ch.drawOnCanvas(canvas);
+//		try {
+//			Thread.sleep(100);
+//		} catch (InterruptedException e) {
+//			// TODO Auto-generated catch block
+//			e.printStackTrace();
+//		}
 		}while(nextPoint != smallestX);
 		
 		
