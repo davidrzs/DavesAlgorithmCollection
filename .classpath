@@ -27,16 +27,5 @@
 			<attribute name="maven.pomderived" value="true"/>
 		</attributes>
 	</classpathentry>
-	<classpathentry kind="lib" path="/usr/share/java/libintl.jar"/>
-	<classpathentry kind="lib" path="/usr/share/java/java_uno.jar"/>
-	<classpathentry kind="lib" path="/usr/share/java/javafx-web-11.jar"/>
-	<classpathentry kind="lib" path="/usr/share/java/javafx-swing-11.jar"/>
-	<classpathentry kind="lib" path="/usr/share/java/javafx-media-11.jar"/>
-	<classpathentry kind="lib" path="/usr/share/java/javafx-graphics-11.jar"/>
-	<classpathentry kind="lib" path="/usr/share/java/javafx-fxml-11.jar"/>
-	<classpathentry kind="lib" path="/usr/share/java/javafx-controls-11.jar"/>
-	<classpathentry kind="lib" path="/usr/share/java/javafx-base-11.jar"/>
-	<classpathentry kind="lib" path="/usr/share/java/java-atk-wrapper.jar"/>
-	<classpathentry kind="lib" path="/usr/share/java/gettext.jar"/>
 	<classpathentry kind="output" path="target/classes"/>
 </classpath>

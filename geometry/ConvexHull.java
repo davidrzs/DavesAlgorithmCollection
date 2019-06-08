@@ -18,7 +18,7 @@ public class ConvexHull {
 	public void drawOnCanvas(Canvas canvas) {
 		GraphicsContext gc = canvas.getGraphicsContext2D();
 		gc.setStroke(Color.BLACK);
-		gc.setLineWidth(4);
+		gc.setLineWidth(2);
 
 		double[] xs = new double[pointsOnConvexHull.size()];
 		double[] ys = new double[pointsOnConvexHull.size()];

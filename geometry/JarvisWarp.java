@@ -8,7 +8,7 @@ public class JarvisWarp {
 	
 	public static void findConvexHull(List<Point> points, ConvexHull ch, Canvas canvas) {
 		
-		if(points.size() == 0) {
+		if(points.size() < 3) {
 			return;
 		}
 		
@@ -21,11 +21,42 @@ public class JarvisWarp {
 		
 		ArrayList<Point> chp = new ArrayList<Point>();
 		
+		chp.add(smallestX);
+		Point nextPoint = smallestX;
+		
+		do {
+			nextPoint = findNext(nextPoint, points);
+			chp.add(nextPoint);
+		}while(nextPoint != smallestX);
+		
+		
+		
+		
+		// set the points of the convex hull
+		ch.pointsOnConvexHull = chp;
+		
 		
 		
 		
 	}
 	
+	
+	public static boolean isRightOf(Point q, Point r, Point p) {
+		return (q.xPos-p.xPos)*(r.yPos-p.yPos) < (q.yPos-p.yPos)*(r.xPos-p.xPos);
+	}
+	
+	
+	public static Point findNext(Point current, List<Point> ps) {
+		Point nextCandidate = (current == ps.get(1)) ? ps.get(0) : ps.get(1);
+		
+		for(Point p : ps) {
+			if(isRightOf(current, nextCandidate, p)) {
+				nextCandidate = p;
+			}
+		}
+		
+		return nextCandidate;
+	}
 	
 	
 	

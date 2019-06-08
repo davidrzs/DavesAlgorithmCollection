@@ -24,7 +24,7 @@ import javafx.scene.layout.VBox;
 
 
 @SuppressWarnings("restriction")
-public class JarvisWarpGUI extends Application {
+public class ConvexHullGui extends Application {
 	
 	static ArrayList<Point> points = new ArrayList<Point>();
 	static ConvexHull convexHull = new ConvexHull();
@@ -35,6 +35,7 @@ public class JarvisWarpGUI extends Application {
 		//Configure UI elements
 		Canvas canvas = new Canvas(); //This is the canvas where the user can draw points
 		Button reset = new Button(); //This button will reset the canvas
+		 
 		reset.setText("Reset Canvas");
 				
 		//Configure layout
@@ -99,7 +100,7 @@ public class JarvisWarpGUI extends Application {
 		for(Point p: points) {
 			p.drawOnCanvas(canvas);
 		}
-		// draw the circle
+		// draw the convex hull
 		convexHull.drawOnCanvas(canvas);
 		
 		
