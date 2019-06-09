@@ -14,7 +14,7 @@ import javafx.scene.canvas.Canvas;
  */
 
 /**
- * @author David
+ * This class implements Andrew's variant of Graham's scan.
  *
  */
 public class GrahamScan {
@@ -29,15 +29,19 @@ public class GrahamScan {
 		}
 		
 		ArrayList<Point> chp = new ArrayList<Point>();
-		
+
+		// this relies on the points being sortable
 		Collections.sort(points);
 		
 		chp.add(points.get(0));
 		
+		
+		
+		
 		int h = 0;
 		
-		for(int i = 2; i < points.size(); i++) {
-			while(h > 0 && isLeftOf(chp.get(h), chp.get(h-1), points.get(i))) {
+		for(int i = 0; i < points.size(); i++) {
+			while(h > 1 && isLeftOf(chp.get(h), chp.get(h-1), points.get(i))) {
 				h--;
 			}	
 			h++;
@@ -46,11 +50,24 @@ public class GrahamScan {
 			} else {
 				chp.set(h, points.get(i));				
 			}
+			draw(canvas, ch, chp, points);
 		}
 		
-		// we can now recycle h
 		
 		
+		int h2 = h;
+		for(int i = points.size()-2; i >= 0; i--) {
+			while(h > h2 && isLeftOf(chp.get(h), chp.get(h-1), points.get(i))) {
+				h--;
+			}	
+			h++;
+			if(chp.size() <= h) {
+				chp.add(points.get(i));
+			} else {
+				chp.set(h, points.get(i));				
+			}
+			draw(canvas ,ch ,chp, points);
+		}		
 		
 
 		// set the points of the convex hull
@@ -61,7 +78,25 @@ public class GrahamScan {
 		
 	}
 	
+	
+	@SuppressWarnings("restriction")
+	public static void draw(Canvas canvas, ConvexHull ch, List<Point> list, List<Point> allPoints) {
+		try {
+			Thread.sleep(200);
+		} catch (InterruptedException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		canvas.getGraphicsContext2D().clearRect(0, 0, canvas.getWidth(), canvas.getHeight());
+		ch.pointsOnConvexHull = list;
+		for(Point p: allPoints) {
+			p.drawOnCanvas(canvas);
+		}
+		ch.drawOnCanvas(canvas);
+
+	}
+	
 	public static boolean isLeftOf(Point p, Point q, Point r) {
-		return (q.xPos-p.xPos)*(r.yPos-p.yPos) < (q.yPos-p.yPos)*(r.xPos-p.xPos);
+		return (q.xPos-p.xPos)*(r.yPos-p.yPos) <= (q.yPos-p.yPos)*(r.xPos-p.xPos);
 	}
 }

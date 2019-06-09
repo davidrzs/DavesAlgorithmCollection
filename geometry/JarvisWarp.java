@@ -1,12 +1,20 @@
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
 
 import javafx.scene.canvas.Canvas;
 
 public class JarvisWarp {
 
+	public static Canvas Canvas;
+	public static ConvexHull Ch;
+	public static List<Point> AllPoints;
 	
 	public static void findConvexHull(List<Point> points, ConvexHull ch, Canvas canvas) {
+		
+		Canvas = canvas;
+		Ch = ch;
+		AllPoints = points;
 		
 		if(points.size() < 3) {
 			return;
@@ -25,16 +33,8 @@ public class JarvisWarp {
 		Point nextPoint = smallestX;
 		
 		do {
-			nextPoint = findNext(nextPoint, points);
+			nextPoint = findNext(nextPoint, points, chp);
 			chp.add(nextPoint);
-//		ch.pointsOnConvexHull = chp;
-//		ch.drawOnCanvas(canvas);
-//		try {
-//			Thread.sleep(100);
-//		} catch (InterruptedException e) {
-//			// TODO Auto-generated catch block
-//			e.printStackTrace();
-//		}
 		}while(nextPoint != smallestX);
 		
 		
@@ -54,16 +54,39 @@ public class JarvisWarp {
 	}
 	
 	
-	public static Point findNext(Point current, List<Point> ps) {
+	public static Point findNext(Point current, List<Point> ps, List<Point> tillNow) {
 		Point nextCandidate = (current == ps.get(1)) ? ps.get(0) : ps.get(1);
 		
 		for(Point p : ps) {
 			if(isRightOf(current, nextCandidate, p)) {
 				nextCandidate = p;
+				draw(tillNow, nextCandidate);
 			}
 		}
 		
 		return nextCandidate;
+	}
+	
+	
+	@SuppressWarnings("restriction")
+	public static void draw(List<Point> list, Point candidate) {
+		// super innefficient but who cares -> dont want to add the garbage point to our list while we are processing it
+		ArrayList<Point> copy = new ArrayList<Point> (list);
+		copy.add(candidate);
+		
+		try {
+			Thread.sleep(200);
+		} catch (InterruptedException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		Canvas.getGraphicsContext2D().clearRect(0, 0, Canvas.getWidth(), Canvas.getHeight());
+		Ch.pointsOnConvexHull = copy;
+		for(Point p: AllPoints) {
+			p.drawOnCanvas(Canvas);
+		}
+		Ch.drawOnCanvas(Canvas);
+
 	}
 	
 	

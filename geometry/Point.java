@@ -25,10 +25,15 @@ import javafx.scene.paint.Color;
 		}
 		
 		
+		@Override
+		public String toString() {
+			return "(" +this.xPos + "," + this.yPos + ")";
+		}
+		
 	    public int compareTo(Object o) {
 	    	// we first cast the object to the other type
 	    	Point theOther = (Point) o;
-	    	if(theOther.xPos < this.xPos) {
+	    	if(this.xPos > theOther.xPos) {
 	    		return 1;
 	    	} else if(theOther.xPos == this.xPos) {
 	    		return 0;
