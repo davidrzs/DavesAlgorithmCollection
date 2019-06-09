@@ -7,8 +7,10 @@ import org.junit.jupiter.api.Test;
 class TestTargetShooting {
 
 	@Test
-	void test() {
-		fail("Not yet implemented");
+	void testPi() {
+		double pi = TargetShooting.targetPIShooting(10000);
+		System.out.println("Pi is: "+ pi);
+		assertTrue(Math.abs(Math.PI - pi)<0.1 );
 	}
 	
 	@Test
