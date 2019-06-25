@@ -18,8 +18,21 @@ public class TargetShooting {
 		return (sum / N)*(rightBoundary-leftBoundary);
 	}
 	
-	public static double targetPIShooting(double maxError) {
-		return 0;
+	public static double targetPIShooting(int iterations) {
+		Random r = new Random();
+		
+		double pi = 0;
+		
+		for(int i = 0; i < iterations; i++) {
+			double sampleX = r.nextDouble()*2 -1; // to make it equally distributed within [-1,1]
+			double sampleY = r.nextDouble()*2 -1; // to make it equally distributed within [-1,1]
+			if(sampleX*sampleX + sampleY*sampleY <= 1) {
+				pi++;
+			}
+		}
+		
+		return 4*pi/iterations;
+		
 	}
 	
 }

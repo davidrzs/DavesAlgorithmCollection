@@ -21,7 +21,6 @@ import javafx.scene.layout.Pane;
 import javafx.scene.layout.VBox;
 
 
-@SuppressWarnings("restriction")
 public class ClarksonGui extends Application {
 	
 	static ArrayList<Point> points = new ArrayList<Point>();

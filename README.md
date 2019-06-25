@@ -69,6 +69,8 @@ However, if you want to take a glimpse feel free to use my code as long as it co
 	- Find euler tour
 	- Find cut vertices and bridges
 	- Min Cut (Karger's Algorithm)
+- *Flow Algorithms*
+	- Ford Fulkerson
 
 **Sorting**:
 - Selection Sort
@@ -96,10 +98,18 @@ However, if you want to take a glimpse feel free to use my code as long as it co
 - Random Coins (calculate expected value and variance)
 - Winter Season (probabilistic DP)
 - Random Triangles (probabilistic graph theory)
+- Smallest enclosing circle
 - Miller-Rabin primality test
 - Target Shooting
 	- PI approximation
 	- Monte Carlo Integration
+
+
+**Geometric Algorithms (incl. a nice JavaFX GUI)** 
+- Convex Hull
+	- Jarvis Wrap
+	- Graham's Algorithm (Andrew's variant)
+- Smallest enclosing circle
 
 **Locks**
 - Peterson Lock
