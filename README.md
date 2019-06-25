@@ -111,5 +111,9 @@ However, if you want to take a glimpse feel free to use my code as long as it co
 - Simple test cases for the locks
 
 
+**Parallel Datastructures**
+- Lock free stack (optimistic locking with CAS)
+- Locked stack (with synchronized)
+
 ## License
 All the code in this repository is licensed under the permissive MIT license.
