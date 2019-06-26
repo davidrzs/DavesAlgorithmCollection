@@ -120,10 +120,16 @@ However, if you want to take a glimpse feel free to use my code as long as it co
 - TTAS based backoff lock  (TTAS with backoff in case of failure)
 - Simple test cases for the locks
 
+**Advanced Parallel Synchonization Mechanisms**
+- Semaphore (using monitors)
+- MonitorBarrier (barrier using monitors)
+- SemaphoreBarrier (barrier using semaphores)
 
 **Parallel Datastructures**
 - Lock free stack (optimistic locking with CAS)
 - Locked stack (with synchronized)
+
+
 
 ## License
 All the code in this repository is licensed under the permissive MIT license.
