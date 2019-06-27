@@ -1,6 +1,6 @@
 package locks;
-import static org.junit.Assert.assertEquals;
 
+import static org.junit.jupiter.api.Assertions.assertEquals;
 
 import org.junit.jupiter.api.Test;
 
@@ -16,7 +16,8 @@ import org.junit.jupiter.api.Test;
 
 
 class TestLocks {
-
+	int sumTill = 10000;
+	int nrOfThreads = 10;
 	// we must define them here because we cannot define volatile vars in methods
 	volatile int resultPeterson;
 	volatile int resultFilter;
@@ -28,7 +29,6 @@ class TestLocks {
 	@Test
 	void testPeterson() throws InterruptedException {
 		// init
-		int sumTill = 1000;
 		resultPeterson = 0;
 		Lock l1 = new PetersonLock();
 		
@@ -62,18 +62,14 @@ class TestLocks {
 			}
 		}
 		
-			
 		t1.join();
-		
 		assertEquals(sumTill*2,resultPeterson);
-		
 	}
 	
 	
 	@Test
 	void testFilter() throws InterruptedException {
 		// init
-		int sumTill = 1000;
 		int nrOfThreads = 15;
 		
 		resultFilter = 0;
@@ -123,9 +119,7 @@ class TestLocks {
 	@Test
 	void testBakery() throws InterruptedException {
 		// init
-		int sumTill = 100;
 		// better keep the number small to test
-		int nrOfThreads = 5;
 		
 		resultBakery = 0;
 		
@@ -168,9 +162,7 @@ class TestLocks {
 	@Test
 	void testTAS() throws InterruptedException {
 		// init
-		int sumTill = 100000;
 		// better keep the number small to test
-		int nrOfThreads = 5;
 		resultTAS = 0;
 		
 		Lock l1 = new TASLock();	
@@ -203,9 +195,7 @@ class TestLocks {
 	@Test
 	void testTTAS() throws InterruptedException {
 		// init
-		int sumTill = 100000;
 		// better keep the number small to test
-		int nrOfThreads = 5;
 		resultTAS = 0;
 		
 		Lock l1 = new TTASLock();	
@@ -240,10 +230,7 @@ class TestLocks {
 	
 	@Test
 	void testBackoff() throws InterruptedException {
-		// init
-		int sumTill = 100000;
 		// better keep the number small to test
-		int nrOfThreads = 5;
 		resultBackoff = 0;
 		
 		Lock l1 = new BackoffLock();	

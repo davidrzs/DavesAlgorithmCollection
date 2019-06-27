@@ -18,10 +18,11 @@ import java.util.concurrent.atomic.AtomicIntegerArray;
  * 
  * WHY DOES THIS WORK
  * 
- * since there are n threads and n levels we can move to the next level when we are not the victim anymore or there are no threads ahead of me.
- * 
+ * since there are n threads and n levels we can move to the next level 
+ *  when we are not the victim anymore or there are no threads ahead of me.
  */
 
+// TODO: explanations need revision
 
 
 

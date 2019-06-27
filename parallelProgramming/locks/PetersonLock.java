@@ -8,56 +8,43 @@
  */
 package locks;
 
+import java.util.concurrent.atomic.AtomicIntegerArray;
+
 /**
  * Implements the PetersonLock for two threads as seen in the lecture.
  * 
  * Since we cannot control the ID's of the threads we just give them the names "0" and "1", highly inefficient but still god for the learning experience.
  */
 public class PetersonLock implements Lock {
-
+	
+	final static int TRUE = 1;
+	final static int FALSE = 0;
+	
 	// we cannot use a volatile array since we then only the address is volatile not the contents. Using atomicarray is konda pointless since they already have their won synchronization
-	private volatile boolean iWannaEnterCriticalSection0 = false;
-	private volatile boolean iWannaEnterCriticalSection1 = false;
+	private AtomicIntegerArray wantToEnterCriticalSection = new AtomicIntegerArray(2);
 	private volatile int iWillWait;
 	
 	@Override
 	public void lock() {
 		int myId = Integer.parseInt(Thread.currentThread().getName());
-		//System.out.println(myId);
-
-		if(myId == 0) {
-			// signal that we would like to enter the critical section
-			iWannaEnterCriticalSection0 = true;
-			// lets tell the other thread that we are prepared to wait.
-			iWillWait = myId;
-			// as long as the other wants to go and i am the one who is waiting i wont enter
-			while(iWannaEnterCriticalSection1 && iWillWait == myId) {
-				// we wait
-			}		
-		} else {
-			// signal that we would like to enter the critical section
-			iWannaEnterCriticalSection1 = true;
-			// lets tell the other thread that we are prepared to wait.
-			iWillWait = myId;
-			// as long as the other wants to go and i am the one who is waiting i wont enter
-			while(iWannaEnterCriticalSection0 && iWillWait == myId) {
-				// we wait
-			}			
+		
+		// signal that we would like to enter the critical section
+		wantToEnterCriticalSection.set(myId, TRUE);
+		// lets tell the other thread that we are prepared to wait.
+		iWillWait = myId;
+		// as long as the other wants to go and i am the one who is waiting i wont enter
+		while(wantToEnterCriticalSection.get(1-myId) == TRUE && iWillWait == myId) {
+			// we wait
 		}
 	
 	}
 
-	/* (non-Javadoc)
-	 * @see locks.Lock#unlock()
-	 */
+
 	@Override
 	public void unlock() {
 		int myId = Integer.parseInt(Thread.currentThread().getName());
-		if(myId == 0) {
-			iWannaEnterCriticalSection0 = false;			
-		}else {
-			iWannaEnterCriticalSection1 = false;			
-		}
+		// we are not interesting in entering anymore -> the other thread can go ahead
+		wantToEnterCriticalSection.set(myId, FALSE);
 	}
 
 }

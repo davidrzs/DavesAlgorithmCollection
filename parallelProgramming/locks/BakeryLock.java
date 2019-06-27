@@ -29,7 +29,6 @@ public class BakeryLock implements Lock {
 	 */
 	public BakeryLock(int nrOfThreads) {
 		this.nrOfThreads = nrOfThreads;
-		//label = new AtomicReferenceArray<Label>(nrOfThreads);
 		flag = new AtomicIntegerArray(nrOfThreads);
 		label = new AtomicIntegerArray(nrOfThreads);
 	}
@@ -37,18 +36,23 @@ public class BakeryLock implements Lock {
 
 	@Override
 	public void lock() {
+		// get my thread id
 		int myId = Integer.parseInt(Thread.currentThread().getName());
-		// we would like to enter
+		// signal that we are interested in entering
 		flag.set(myId,1);
-		//label.set(myId, new Label(findMaximalLabel()+1));
+		// our label is one bigger than the maximal label around
 		label.set(myId, (findMaximalLabel()+1));
+		// now we loop over all other threads and check for every thread if it has a label 
+		// smaller than mine or if we have the same label its threadID is smaller than mine.
+		// this defines a lexicographical ordering on the set of threads. Only if there is no thread
+		// with a lower label or one of same label and lower threadID can we go ahead and enter 
+		// the critical section
 		for(int k = 0; k < nrOfThreads; k++) {
 			while((k != myId) && flag.get(k) == 1 && (label.get(k) < label.get(myId)  || (label.get(k) == label.get(myId) && k < myId ))) {
 				// spinning
 			}
 		}
 	}
-
 
 	
 	@Override
@@ -57,31 +61,11 @@ public class BakeryLock implements Lock {
 		flag.set(myId, 0);
 	}
 	
-	
-	
-//	boolean topologicalOrderedBefore(int thread1, int thread2) {
-//		if(label.get(thread1) == null) {
-//			return true;
-//		}
-//		if(label.get(thread2) == null) {
-//			return false;
-//		}		
-//		return label.get(thread1).getLabel() < label.get(thread2).getLabel()  || (label.get(thread1).getLabel() == label.get(thread2).getLabel() && thread1 < thread2 );
-//	}
-	
-	
-//	public int findMaximalLabel() {
-//		int max = 0;
-//		for(int i = 0; i < label.length(); i++) {
-//			if(label.get(i) != null && label.get(i).getLabel()> max) {
-//				max = label.get(i).getLabel();
-//			}
-//		}
-//		return max;
-//	}
-	
 
-	
+	/**
+	 * Returns the biggest label that has been assigned until now.
+	 * @return maximal label found in labels array
+	 */
 	public int findMaximalLabel() {
 		int max = 0;
 		for(int i = 0; i < label.length(); i++) {
@@ -91,26 +75,6 @@ public class BakeryLock implements Lock {
 		}
 		return max;
 	}
-	
-	class Label{
-		volatile int label;
-		
-		
-		Label(int label){
-			this.label = label;
-		}
-		
-		void setLabel(int label) {
-			this.label = (label % 100000);
-		}
-		
-		int getLabel() {
-			return label;
-		}
-		
-		
-	}
-
 }
 
 
