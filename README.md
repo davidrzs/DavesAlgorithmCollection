@@ -128,6 +128,8 @@ However, if you want to take a glimpse feel free to use my code as long as it co
 **Parallel Datastructures**
 - Lock free stack (optimistic locking with CAS)
 - Locked stack (with synchronized)
+- Lock free queue (optimistic locking with CAS)
+- Locked queue (with Lock and Conditions)
 
 
 
