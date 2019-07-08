@@ -8,7 +8,6 @@
 	</classpathentry>
 	<classpathentry kind="src" path="datastructures"/>
 	<classpathentry kind="src" path="graphs"/>
-	<classpathentry kind="src" path="dynamicProgramming"/>
 	<classpathentry kind="src" path="searching"/>
 	<classpathentry kind="src" path="selection"/>
 	<classpathentry excluding="helpFiles/" kind="src" path="probabilistic"/>
