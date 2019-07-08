@@ -16,13 +16,16 @@ However, if you want to take a glimpse feel free to use my code as long as it co
 
 ## Implemented Algorithms:
 
-**Datastructures**:
+#### Datastructures
+
  - AVL Tree
  - LinkedList
  - Queue
  - Stack
  - DecreaseKey Min Heap (like a priority queue but objects in the heap that change attributes can be reordered in log(n) time.)
  - SkipList
+
+#### Dynamic Programming
 
 **Deterministic Dynamic Programming**
 - Knapsack
@@ -42,35 +45,43 @@ However, if you want to take a glimpse feel free to use my code as long as it co
 - Is string an interleafing of two other strings
 - EggDropping : Given a number of Eggs and Floors returns minimal number of tries to find out at which level eggs start breaking.
 
-**Graphs**:
-- *Graph Datastructures*
-	- Graph interface
-	- Adjacency list based graph class
-	- Matrix based graph class
-	- Weighted matrix graph class
-	- Union Find (using arrays)
-	- Weighted Union Find
-- *Simple Algorithms*
-	- Simple Depth first search
-	- Breadth first search
-	- Topological ordering of directed acyclic graph
-	- Directed Graph contains cycle ?
-	- Undirected graph contains cycle ?
-- *Shortest Paths*
-	- Bellman Ford
-	- Floyd-Warshall
-	- Dijkstra
-	- Highly optimized Dijkstra
-	- BFS Shortest Path
-- *Minimal Spanning Trees*
-	- Kruskal
-	- Prim
-- *Advanced Algorithms*
-	- Find euler tour
-	- Find cut vertices and bridges
-	- Min Cut (Karger's Algorithm)
-- *Flow Algorithms*
-	- Ford Fulkerson
+**Probabilistic Dynamic Programming**
+- Winter Season
+- Parking Problem
+
+#### Graphs
+
+**Graph Datastructures**
+- Graph interface
+- Adjacency list based graph class
+- Matrix based graph class
+- Weighted matrix graph class
+- Union Find (using arrays)
+- Weighted Union Find
+**Simple Algorithms**
+- Simple Depth first search
+- Breadth first search
+- Topological ordering of directed acyclic graph
+- Directed Graph contains cycle ?
+- Undirected graph contains cycle ?
+**Shortest Paths**
+- Bellman Ford
+- Floyd-Warshall
+- Dijkstra
+- Highly optimized Dijkstra
+- BFS Shortest Path
+**Minimal Spanning Trees**
+- Kruskal
+- Prim
+**Advanced Algorithms**
+- Find euler tour
+- Find cut vertices and bridges
+- Min Cut (Karger's Algorithm)
+**Flow Algorithms**
+- Ford Fulkerson
+
+
+#### Sorting, Searching & Selecting
 
 **Sorting**:
 - Selection Sort
@@ -94,7 +105,9 @@ However, if you want to take a glimpse feel free to use my code as long as it co
 **Selecting**:
 - Quickselect with random pivot
 
-**Probabilistic Algorithms**
+
+#### Probabilistic Algorithms
+
 - Random Coins (calculate expected value and variance)
 - Random Triangles (probabilistic graph theory)
 - Smallest enclosing circle
@@ -103,16 +116,18 @@ However, if you want to take a glimpse feel free to use my code as long as it co
 	- PI approximation
 	- Monte Carlo Integration
 
-**Probabilistic Dynamic Programming**
-- Winter Season
-- Parking Problem
 
+#### Geometric Algorithms
+They include a nice JavaFX GUI
 
-**Geometric Algorithms (incl. a nice JavaFX GUI)** 
-- Convex Hull
-	- Jarvis Wrap
-	- Graham's Algorithm (Andrew's variant)
-- Smallest enclosing circle
+**Convex Hull**
+- Jarvis Wrap
+- Graham's Algorithm (Andrew's variant)
+
+**Smallest enclosing circle**
+- Clarksons Algorithm
+
+#### Parallel Programming
 
 **Locks**
 - Peterson Lock
