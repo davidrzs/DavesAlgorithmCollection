@@ -24,7 +24,7 @@ However, if you want to take a glimpse feel free to use my code as long as it co
  - DecreaseKey Min Heap (like a priority queue but objects in the heap that change attributes can be reordered in log(n) time.)
  - SkipList
 
-**Dynamic Programming**
+**Deterministic Dynamic Programming**
 - Knapsack
 - Fleamarket Problem (Multi-constrained knapsack)
 - CoinChange
@@ -96,13 +96,16 @@ However, if you want to take a glimpse feel free to use my code as long as it co
 
 **Probabilistic Algorithms**
 - Random Coins (calculate expected value and variance)
-- Winter Season (probabilistic DP)
 - Random Triangles (probabilistic graph theory)
 - Smallest enclosing circle
 - Miller-Rabin primality test
 - Target Shooting
 	- PI approximation
 	- Monte Carlo Integration
+
+**Probabilistic Dynamic Programming**
+- Winter Season
+- Parking Problem
 
 
 **Geometric Algorithms (incl. a nice JavaFX GUI)** 
