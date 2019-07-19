@@ -16,7 +16,7 @@ However, if you want to take a glimpse feel free to use my code as long as it co
 
 ## Implemented Algorithms:
 
-#### Datastructures
+### Datastructures
 
  - AVL Tree
  - LinkedList
@@ -25,7 +25,7 @@ However, if you want to take a glimpse feel free to use my code as long as it co
  - DecreaseKey Min Heap (like a priority queue but objects in the heap that change attributes can be reordered in log(n) time.)
  - SkipList
 
-#### Dynamic Programming
+### Dynamic Programming
 
 **Deterministic Dynamic Programming**
 
@@ -51,7 +51,7 @@ However, if you want to take a glimpse feel free to use my code as long as it co
 - Winter Season
 - Parking Problem
 
-#### Graphs
+### Graphs
 
 **Graph Datastructures**
 
@@ -94,7 +94,7 @@ However, if you want to take a glimpse feel free to use my code as long as it co
 - Ford Fulkerson
 
 
-#### Sorting, Searching & Selecting
+### Sorting, Searching & Selecting
 
 **Sorting**:
 
@@ -122,7 +122,7 @@ However, if you want to take a glimpse feel free to use my code as long as it co
 - Quickselect with random pivot
 
 
-#### Probabilistic Algorithms
+### Probabilistic Algorithms
 
 - Random Coins (calculate expected value and variance)
 - Random Triangles (probabilistic graph theory)
@@ -133,7 +133,7 @@ However, if you want to take a glimpse feel free to use my code as long as it co
 	- Monte Carlo Integration
 
 
-#### Geometric Algorithms
+### Geometric Algorithms
 They include a nice JavaFX GUI
 
 **Convex Hull**
@@ -145,7 +145,7 @@ They include a nice JavaFX GUI
 
 - Clarksons Algorithm
 
-#### Parallel Programming
+### Parallel Programming
 
 **Parallel Algorithms**
 

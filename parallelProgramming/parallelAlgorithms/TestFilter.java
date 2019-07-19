@@ -18,22 +18,14 @@ import org.junit.jupiter.api.Test;
  * @author David
  *
  */
-class TestParallelPrefixSum {
+class TestFilter {
 
 	@Test
-	void test() {
-		ParallelPrefixSum pps = new ParallelPrefixSum(new int[] {1,1,3,1,1,6,1,1});
-		assertEquals(15,pps.calculate()[7]);
+	void testSmallerThan() {
+		int[] arr = new int[] {1,2,3,4,5,6,7,6,5,4,3,2,1};
 		
-		ParallelPrefixSum pps2 = new ParallelPrefixSum(new int[] {2,5,1,1,2,3,5,7,1});
-		assertEquals(27,pps2.calculate()[8]);
+		System.out.println(Arrays.toString(Filter.smallerThan(arr, 4)));
+		assertTrue(Arrays.equals(new int[] {1,2,3,3,2,1}, Filter.smallerThan(arr, 4)));
 	}
 
-	@Test
-	void test2() {
-		ParallelPrefixSum pps = new ParallelPrefixSum(new int[] {1,1,1,1,1,0,1,1,1});
-		System.out.println(Arrays.toString(pps.calculate()));
-		assertEquals(15,pps.calculate()[7]);
-	}
-	
 }
