@@ -28,6 +28,7 @@ However, if you want to take a glimpse feel free to use my code as long as it co
 #### Dynamic Programming
 
 **Deterministic Dynamic Programming**
+
 - Knapsack
 - Fleamarket Problem (Multi-constrained knapsack)
 - CoinChange
@@ -46,44 +47,57 @@ However, if you want to take a glimpse feel free to use my code as long as it co
 - EggDropping : Given a number of Eggs and Floors returns minimal number of tries to find out at which level eggs start breaking.
 
 **Probabilistic Dynamic Programming**
+
 - Winter Season
 - Parking Problem
 
 #### Graphs
 
 **Graph Datastructures**
+
 - Graph interface
 - Adjacency list based graph class
 - Matrix based graph class
 - Weighted matrix graph class
 - Union Find (using arrays)
 - Weighted Union Find
+
 **Simple Algorithms**
+
 - Simple Depth first search
 - Breadth first search
 - Topological ordering of directed acyclic graph
 - Directed Graph contains cycle ?
 - Undirected graph contains cycle ?
+
 **Shortest Paths**
+
 - Bellman Ford
 - Floyd-Warshall
 - Dijkstra
 - Highly optimized Dijkstra
 - BFS Shortest Path
+
 **Minimal Spanning Trees**
+
 - Kruskal
 - Prim
+
 **Advanced Algorithms**
+
 - Find euler tour
 - Find cut vertices and bridges
 - Min Cut (Karger's Algorithm)
+
 **Flow Algorithms**
+
 - Ford Fulkerson
 
 
 #### Sorting, Searching & Selecting
 
 **Sorting**:
+
 - Selection Sort
 - HeapSort
 - Bubble Sort
@@ -97,12 +111,14 @@ However, if you want to take a glimpse feel free to use my code as long as it co
 - Insertion Sort with binary insertion
 
 **Searching**:
+
 - Linear Search
 - Binary Search
 - Exponential Search
 - Interpolation Search
 
 **Selecting**:
+
 - Quickselect with random pivot
 
 
@@ -121,15 +137,23 @@ However, if you want to take a glimpse feel free to use my code as long as it co
 They include a nice JavaFX GUI
 
 **Convex Hull**
+
 - Jarvis Wrap
 - Graham's Algorithm (Andrew's variant)
 
 **Smallest enclosing circle**
+
 - Clarksons Algorithm
 
 #### Parallel Programming
 
+**Parallel Algorithms**
+
+- Parallel Prefix Sum
+- Packing
+
 **Locks**
+
 - Peterson Lock
 - Filter Lock
 - Bakery Lock
@@ -139,11 +163,13 @@ They include a nice JavaFX GUI
 - Simple test cases for the locks
 
 **Advanced Parallel Synchonization Mechanisms**
+
 - Semaphore (using monitors)
 - MonitorBarrier (barrier using monitors)
 - SemaphoreBarrier (barrier using semaphores)
 
 **Parallel Datastructures**
+
 - Lock free stack (optimistic locking with CAS)
 - Locked stack (with synchronized)
 - Lock free queue (optimistic locking with CAS)
