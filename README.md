@@ -152,6 +152,7 @@ They include a nice JavaFX GUI
 - Parallel Prefix Sum
 - Packing
 - Largest Triple (Fork-Join)
+- Producer Consumer using Conditions (very primitive)
 
 **Locks**
 
