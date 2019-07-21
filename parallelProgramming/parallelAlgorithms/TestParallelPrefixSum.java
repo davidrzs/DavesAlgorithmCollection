@@ -31,7 +31,7 @@ class TestParallelPrefixSum {
 
 	@Test
 	void test2() {
-		ParallelPrefixSum pps = new ParallelPrefixSum(new int[] {1,1,1,1,1,0,1,1,1});
+		ParallelPrefixSum pps = new ParallelPrefixSum(new int[] {1,1,0,1,0,1,1,1});
 		System.out.println(Arrays.toString(pps.calculate()));
 		assertEquals(15,pps.calculate()[7]);
 	}

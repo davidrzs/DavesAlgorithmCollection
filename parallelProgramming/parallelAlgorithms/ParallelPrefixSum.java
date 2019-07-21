@@ -114,17 +114,15 @@ class PropagateValues extends RecursiveAction{
 	public void compute() {
 		if(leftIndex == rightIndex) {
 			if(direction == Direction.LEFT) {
-				arrayToFill[leftIndex] = node.father.leftSum + node.totalSum;
+				arrayToFill[leftIndex] = node.totalSum + node.leftSumFromFather;
 			}else {
-				arrayToFill[leftIndex] = node.father.totalSum;
+				arrayToFill[leftIndex] = node.totalSum + node.leftSumFromFather;
 			}
 		}else {
-			if(direction == Direction.LEFT) {
-				node.leftSumFromFather = node.father.leftSumFromFather;
-			}else {
-				node.leftSumFromFather = node.father.leftSum + node.father.leftSumFromFather;
-				node.totalSum += node.leftSumFromFather;
-			}
+			
+			node.rightChild.leftSumFromFather = node.leftSumFromFather + node.leftSum;
+			node.leftChild.leftSumFromFather = node.leftSumFromFather; 
+			
 			int midPoint = (leftIndex + rightIndex) / 2;
 			PropagateValues left = new PropagateValues(node.leftChild, arrayToFill, leftIndex, midPoint, Direction.LEFT);
 			PropagateValues right = new PropagateValues(node.rightChild, arrayToFill, midPoint+1, rightIndex,Direction.RIGHT);

@@ -38,7 +38,7 @@ public class Filter {
 
 		ParallelPrefixSum pps = new ParallelPrefixSum(bitMask);
 		int[] mappingVector = pps.calculate();
-		System.out.println(Arrays.toString(mappingVector));
+		System.out.println("mapping vector " + Arrays.toString(mappingVector));
 		int[] target = new int[mappingVector[mappingVector.length-1]];
 		for(int i = 0; i < arrayToFilter.length; i++) {
 			if(bitMask[i] == 1) {
