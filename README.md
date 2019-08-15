@@ -18,6 +18,8 @@ However, if you want to take a glimpse feel free to use my code as long as it co
 
 ### Datastructures
 
+You can find [more datastructures below under the Graphs section](#graphs)
+
  - AVL Tree
  - LinkedList
  - Queue
@@ -60,6 +62,7 @@ However, if you want to take a glimpse feel free to use my code as long as it co
 - Matrix based graph class
 - Weighted matrix graph class
 - Union Find (using arrays)
+- Union Find with path compression
 - Weighted Union Find
 
 **Simple Algorithms**
