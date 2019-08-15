@@ -88,6 +88,7 @@ However, if you want to take a glimpse feel free to use my code as long as it co
 - Find euler tour
 - Find cut vertices and bridges
 - Min Cut (Karger's Algorithm)
+- Greedy maximal matching (on bipartite and non bipartite graphs)
 
 **Flow Algorithms**
 
